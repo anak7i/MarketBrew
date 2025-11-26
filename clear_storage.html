@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Storage</title>
+</head>
+<body>
+    <h1>Clear LocalStorage for Testing</h1>
+    <button onclick="clearAll()">Clear All Data</button>
+    <div id="status"></div>
+    
+    <script>
+        function clearAll() {
+            localStorage.clear();
+            document.getElementById('status').innerHTML = '<p>✅ All localStorage data cleared!</p>';
+        }
+        
+        // Show current storage
+        const keys = Object.keys(localStorage);
+        document.getElementById('status').innerHTML = `<p>Current keys: ${keys.join(', ')}</p>`;
+    </script>
+</body>
+</html>

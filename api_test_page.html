@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API接口测试页面</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .api-test {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .button:hover {
+            background: #5a67d8;
+        }
+        .result {
+            background: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+        .error {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+        .loading {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 MarketBrew API 接口测试</h1>
+            <p>测试新版LangChain增强API vs 旧版传统API</p>
+        </div>
+
+        <div class="api-test">
+            <h3>📊 个股分析对比测试</h3>
+            <p>股票: 600036 招商银行</p>
+            <button class="button" onclick="testOldStockAPI()">测试旧版API (/api/stock-analysis)</button>
+            <button class="button" onclick="testNewStockAPI()">测试新版API (/api/langchain/stock-analysis)</button>
+            <div id="stockResult" class="result" style="display:none;"></div>
+            <div id="stockStatus" style="display:none;"></div>
+        </div>
+
+        <div class="api-test">
+            <h3>🏪 市场分析对比测试</h3>
+            <button class="button" onclick="testOldMarketAPI()">测试旧版API (/api/market-analysis)</button>
+            <button class="button" onclick="testNewMarketAPI()">测试新版API (/api/langchain/market-analysis)</button>
+            <div id="marketResult" class="result" style="display:none;"></div>
+            <div id="marketStatus" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script>
+        async function testOldStockAPI() {
+            showLoading('stockStatus', '正在测试旧版个股分析API...');
+            try {
+                const response = await fetch('http://localhost:5001/api/stock-analysis', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        stocks: [{ symbol: '600036', name: '招商银行' }]
+                    }),
+                    timeout: 30000
+                });
+                
+                const data = await response.json();
+                showResult('stockResult', '旧版API结果', data);
+                showSuccess('stockStatus', '旧版API测试完成');
+            } catch (error) {
+                showError('stockStatus', `旧版API错误: ${error.message}`);
+            }
+        }
+
+        async function testNewStockAPI() {
+            showLoading('stockStatus', '正在测试新版LangChain个股分析API...');
+            try {
+                const response = await fetch('http://localhost:5001/api/langchain/stock-analysis', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        stocks: [{ symbol: '600036', name: '招商银行' }]
+                    }),
+                    timeout: 60000
+                });
+                
+                const data = await response.json();
+                showResult('stockResult', '新版LangChain API结果', data);
+                showSuccess('stockStatus', '新版API测试完成');
+            } catch (error) {
+                showError('stockStatus', `新版API错误: ${error.message}`);
+            }
+        }
+
+        async function testOldMarketAPI() {
+            showLoading('marketStatus', '正在测试旧版市场分析API...');
+            try {
+                const response = await fetch('http://localhost:5001/api/market-analysis', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        market_status: 'trading',
+                        stocks: [{ symbol: '600036', name: '招商银行' }]
+                    }),
+                    timeout: 30000
+                });
+                
+                const data = await response.json();
+                showResult('marketResult', '旧版市场API结果', data);
+                showSuccess('marketStatus', '旧版市场API测试完成');
+            } catch (error) {
+                showError('marketStatus', `旧版市场API错误: ${error.message}`);
+            }
+        }
+
+        async function testNewMarketAPI() {
+            showLoading('marketStatus', '正在测试新版LangChain市场分析API...');
+            try {
+                const response = await fetch('http://localhost:5001/api/langchain/market-analysis', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        market_status: 'trading',
+                        stocks: [{ symbol: '600036', name: '招商银行' }]
+                    }),
+                    timeout: 60000
+                });
+                
+                const data = await response.json();
+                showResult('marketResult', '新版LangChain市场API结果', data);
+                showSuccess('marketStatus', '新版市场API测试完成');
+            } catch (error) {
+                showError('marketStatus', `新版市场API错误: ${error.message}`);
+            }
+        }
+
+        function showResult(elementId, title, data) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.innerHTML = `=== ${title} ===\n${JSON.stringify(data, null, 2)}`;
+        }
+
+        function showLoading(elementId, message) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = 'status loading';
+            element.textContent = message;
+        }
+
+        function showSuccess(elementId, message) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = 'status success';
+            element.textContent = message;
+        }
+
+        function showError(elementId, message) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = 'status error';
+            element.textContent = message;
+        }
+    </script>
+</body>
+</html>

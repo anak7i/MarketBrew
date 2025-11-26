@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek A股交易系统报告</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+        .stat-card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        .stocks-section {
+            margin-bottom: 40px;
+        }
+        .stocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .stock-card {
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 20px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .stock-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .stock-symbol {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stock-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .stock-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        .ai-section {
+            background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .ai-section h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .recommendation {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #e1e5e9;
+            color: #666;
+        }
+        .refresh-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .refresh-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 DeepSeek A股交易系统</h1>
+            <p>专业AI驱动的股票分析与交易决策系统</p>
+            <p>生成时间: 2025-11-05 13:14:34</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>443</h3>
+                <p>总股票数</p>
+            </div>
+            <div class="stat-card">
+                <h3>98%</h3>
+                <p>数据覆盖率</p>
+            </div>
+            <div class="stat-card">
+                <h3>DeepSeek</h3>
+                <p>AI分析引擎</p>
+            </div>
+            <div class="stat-card">
+                <h3>10万</h3>
+                <p>资金规模(CNY)</p>
+            </div>
+        </div>
+
+        <div class="ai-section">
+            <h2>🤖 AI交易决策</h2>
+            <div class="recommendation">
+                <strong>市场判断:</strong> 震荡整理，观望情绪浓厚<br>
+                <strong>操作建议:</strong> 保持80%仓位，20%现金储备
+            </div>
+            <div class="recommendation">
+                <strong>重点关注:</strong> 000001、000002、600519<br>
+                <strong>策略:</strong> 持有观望，等待突破信号
+            </div>
+        </div>
+
+        <div class="stocks-section">
+            <h2>📊 重点股票监控</h2>
+            <div class="stocks-grid">
+
+                <div class="stock-card">
+                    <div class="stock-header">
+                        <div class="stock-symbol">000001<br><small>平安银行</small></div>
+                        <div class="stock-price">¥11.53</div>
+                    </div>
+                    <div class="stock-details">
+                        <div><strong>开盘:</strong> ¥11.42</div>
+                        <div><strong>成交量:</strong> 377430</div>
+                        <div><strong>更新:</strong> 2025-11-04</div>
+                        <div><strong>建议:</strong> 持有</div>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-header">
+                        <div class="stock-symbol">000002<br><small>万科A</small></div>
+                        <div class="stock-price">¥6.26</div>
+                    </div>
+                    <div class="stock-details">
+                        <div><strong>开盘:</strong> ¥6.28</div>
+                        <div><strong>成交量:</strong> 262931</div>
+                        <div><strong>更新:</strong> 2025-11-04</div>
+                        <div><strong>建议:</strong> 持有</div>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-header">
+                        <div class="stock-symbol">600519<br><small>贵州茅台</small></div>
+                        <div class="stock-price">¥1430.18</div>
+                    </div>
+                    <div class="stock-details">
+                        <div><strong>开盘:</strong> ¥1435.1</div>
+                        <div><strong>成交量:</strong> 2007</div>
+                        <div><strong>更新:</strong> 2025-11-04</div>
+                        <div><strong>建议:</strong> 持有</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="refresh-btn" onclick="window.location.reload()">🔄 刷新数据</button>
+
+        <div class="footer">
+            <p>DeepSeek A股交易系统 | 数据来源: 腾讯财经API + akshare | AI分析: DeepSeek</p>
+            <p>⚠️ 投资有风险，决策需谨慎</p>
+        </div>
+    </div>
+
+    <script>
+        // 自动刷新功能
+        setTimeout(function() {
+            console.log('系统运行正常');
+        }, 1000);
+        
+        // 添加点击效果
+        document.querySelectorAll('.stock-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-2px)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

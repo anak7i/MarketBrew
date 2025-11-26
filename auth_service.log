@@ -1,0 +1,4012 @@
+INFO:__main__:数据库初始化完成
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+ * Serving Flask app 'user_auth_service'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7001
+ * Running on http://198.18.0.1:7001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:13:12] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:14:12] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+INFO:__main__:新用户注册成功: Aaronrocks
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:14:12] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:27:06] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+INFO:__main__:新用户注册成功: Qual
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:27:07] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+INFO:__main__:新用户注册成功: testuser123
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:27:53] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:46:05] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+INFO:__main__:新用户注册成功: New
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 09:46:05] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:37] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:37] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:41] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:41] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:45] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:46] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:51] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:__main__:用户登录成功: Qual
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:05:51] "POST /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:06:10] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:__main__:用户登录成功: Aaronrocks
+INFO:werkzeug:127.0.0.1 - - [11/Nov/2025 10:06:10] "POST /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/comprehensive_data_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [12/Nov/2025 13:35:02] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+INFO:__main__:用户登录成功: Aaronrocks
+INFO:werkzeug:127.0.0.1 - - [12/Nov/2025 13:35:02] "POST /api/auth/login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_news_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/news_and_announcements_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/unified_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/decision_api_server.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/decision_api_server.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/decision_api_server.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/decision_api_server.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/batch_optimized_decision_engine.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/run_complete_system.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/debug_deepseek_prompt.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/debug_deepseek_prompt.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/daily_entry_signal_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/daily_entry_signal_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/daily_entry_signal_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/daily_entry_signal_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/daily_entry_signal_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/sector_heat_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/risk_alert_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_data_fetcher.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/data_source_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Library/Python/3.9/lib/python/site-packages/akshare/stock/stock_summary.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_emotion_indicators.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_emotion_indicators.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+🚀 MarketBrew 用户认证服务启动中...
+📚 API文档:
+  POST /api/auth/register - 用户注册
+  POST /api/auth/login - 用户登录
+  GET /api/auth/profile - 获取用户资料
+  PUT /api/auth/profile - 更新用户资料
+  GET /health - 健康检查
+🌐 服务运行在: http://localhost:7001
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890

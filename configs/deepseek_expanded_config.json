@@ -1,0 +1,71 @@
+{
+  "agent_type": "BaseAgent",
+  "market_type": "A_STOCK",
+  "currency": "CNY",
+  "description": "A股AI交易 - DeepSeek 扩展股票池",
+  "date_range": {
+    "init_date": "2025-01-02",
+    "end_date": "2025-11-01"
+  },
+  "models": [
+    {
+      "name": "deepseek-chat",
+      "basemodel": "deepseek/deepseek-chat",
+      "signature": "deepseek-chat",
+      "enabled": true,
+      "description": "DeepSeek - 扩展股票池A股交易"
+    }
+  ],
+  "agent_config": {
+    "max_steps": 30,
+    "max_retries": 3,
+    "base_delay": 1.0,
+    "initial_cash": 100000.0,
+    "market_timezone": "Asia/Shanghai",
+    "trading_hours": {
+      "morning_start": "09:30",
+      "morning_end": "11:30",
+      "afternoon_start": "13:00",
+      "afternoon_end": "15:00"
+    },
+    "trading_rules": {
+      "t_plus_1": true,
+      "min_lot_size": 100,
+      "max_price_change": 0.10,
+      "cyb_max_price_change": 0.20,
+      "kc_max_price_change": 0.20
+    }
+  },
+  "stock_universe": {
+    "type": "expanded",
+    "pools": [
+      {
+        "name": "沪深300",
+        "index": "000300", 
+        "count": 300,
+        "weight": 0.6,
+        "description": "大盘蓝筹股，稳健型"
+      },
+      {
+        "name": "创业板指",
+        "index": "399006",
+        "count": 100, 
+        "weight": 0.25,
+        "description": "成长股，中等风险"
+      },
+      {
+        "name": "科创50",
+        "index": "000688",
+        "count": 50,
+        "weight": 0.15,
+        "description": "科技股，高风险高收益"
+      }
+    ],
+    "total_stocks": 52,
+    "data_source": "akshare",
+    "update_strategy": "balanced"
+  },
+  "log_config": {
+    "log_path": "./data/agent_data_expanded"
+  }
+}

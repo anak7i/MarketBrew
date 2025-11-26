@@ -1,0 +1,18 @@
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "688037",
+    "3. Last Refreshed": "2025-11-05",
+    "4. Output Size": "Compact",
+    "5. Time Zone": "Asia/Shanghai"
+  },
+  "Time Series (Daily)": {
+    "2025-11-05": {
+      "1. buy price": "120.20",
+      "2. high": "126.30",
+      "3. low": "119.68",
+      "4. sell price": "125.03",
+      "5. volume": "3196392"
+    }
+  }
+}

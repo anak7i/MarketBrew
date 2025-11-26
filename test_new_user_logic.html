@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User Logic Test</title>
+</head>
+<body>
+    <h1>New User Subscription Logic Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        function testNewUserLogic() {
+            const results = [];
+            
+            // Test 1: Logged in user should get empty array
+            localStorage.setItem('marketbrew_token', 'test_token');
+            localStorage.removeItem('stockSubscriptions');
+            
+            function loadSubscriptions() {
+                try {
+                    const saved = localStorage.getItem('stockSubscriptions');
+                    if (saved) {
+                        const data = JSON.parse(saved);
+                        console.log(`✅ 加载了 ${data.length} 个订阅`);
+                        return data;
+                    }
+                } catch (e) {
+                    console.error('⚠️ 加载订阅数据失败:', e);
+                }
+                
+                const isLoggedIn = localStorage.getItem('marketbrew_token');
+                
+                // 如果用户已登录，永远不加载默认股票，让用户自己选择
+                if (isLoggedIn) {
+                    console.log('🆕 登录用户，从空订阅开始');
+                    return [];
+                }
+                
+                // 仅对未登录的游客提供示例股票
+                const isFirstVisit = !localStorage.getItem('marketbrew_visited');
+                if (!isFirstVisit) {
+                    localStorage.setItem('marketbrew_visited', 'true');
+                    return [
+                        {symbol: '000001', name: '平安银行', addedAt: new Date().toISOString()},
+                        {symbol: '600519', name: '贵州茅台', addedAt: new Date().toISOString()}
+                    ];
+                }
+                
+                return [];
+            }
+            
+            const result1 = loadSubscriptions();
+            results.push(`Test 1 - Logged in user: ${result1.length} subscriptions (expected: 0)`);
+            
+            // Test 2: Not logged in user should get default stocks
+            localStorage.removeItem('marketbrew_token');
+            localStorage.removeItem('marketbrew_visited');
+            
+            const result2 = loadSubscriptions();
+            results.push(`Test 2 - Not logged in user: ${result2.length} subscriptions (expected: 2)`);
+            
+            // Display results
+            document.getElementById('results').innerHTML = results.map(r => `<p>${r}</p>`).join('');
+            
+            // Clean up
+            localStorage.removeItem('marketbrew_token');
+            localStorage.removeItem('stockSubscriptions');
+            localStorage.removeItem('marketbrew_visited');
+        }
+        
+        testNewUserLogic();
+    </script>
+</body>
+</html>

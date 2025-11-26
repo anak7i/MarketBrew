@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketBrew - A股智能订阅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: white;
+            padding: 16px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .add-form {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .add-input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .add-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .add-btn:hover {
+            background: #3367d6;
+        }
+
+        .subscription-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .subscription-item {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #4285f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stock-info h4 {
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .stock-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .remove-btn:hover {
+            background: #c82333;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+
+        .storage-info {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .storage-info h4 {
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 4px;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-title">📈 MarketBrew - A股订阅管理</div>
+        <div>关闭浏览器不丢失版本</div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="section-title">💾 存储状态</div>
+            <div class="storage-info">
+                <h4>永久存储保证</h4>
+                <p>✅ 您的订阅数据使用 localStorage 永久保存</p>
+                <p>✅ 关闭浏览器、重启电脑都不会丢失</p>
+                <p>✅ 每次操作都会自动保存</p>
+            </div>
+            <button class="btn btn-info" onclick="showStorageInfo()">📊 查看存储详情</button>
+            <button class="btn btn-danger" onclick="clearAllData()">🗑️ 清除所有数据</button>
+            <button class="btn btn-success" onclick="exportData()">💾 导出备份</button>
+            <button class="btn btn-success" onclick="importData()">📂 导入备份</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">➕ 添加股票订阅</div>
+            <div class="add-form">
+                <input type="text" class="add-input" id="stockInput" placeholder="输入股票代码或名称 (如: 000001 或 平安银行)" />
+                <button class="add-btn" onclick="addStock()">添加订阅</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📋 我的订阅列表 (<span id="stockCount">0</span> 个)</div>
+            <div class="subscription-list" id="subscriptionList">
+                <div class="empty-state">正在加载...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 存储管理器 - 简化版
+        class SimpleStorageManager {
+            constructor() {
+                this.storageKey = 'marketbrew_permanent_subscriptions';
+                this.subscriptions = this.loadSubscriptions();
+                this.render();
+                
+                // 监听页面关闭事件
+                window.addEventListener('beforeunload', () => this.saveSubscriptions());
+                window.addEventListener('visibilitychange', () => {
+                    if (document.hidden) this.saveSubscriptions();
+                });
+                
+                console.log('💾 MarketBrew 存储管理器已启动');
+            }
+
+            loadSubscriptions() {
+                try {
+                    // 尝试从新key加载
+                    let saved = localStorage.getItem(this.storageKey);
+                    
+                    // 如果没有，尝试迁移旧数据
+                    if (!saved) {
+                        const oldKeys = ['stockSubscriptions', 'marketbrew_subscriptions'];
+                        for (const key of oldKeys) {
+                            const oldData = localStorage.getItem(key);
+                            if (oldData) {
+                                saved = oldData;
+                                this.saveSubscriptions(JSON.parse(oldData));
+                                localStorage.removeItem(key);
+                                console.log(`🔄 已迁移数据从 ${key}`);
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if (saved) {
+                        const data = JSON.parse(saved);
+                        console.log(`✅ 加载了 ${data.length} 个订阅`);
+                        return data;
+                    }
+                } catch (e) {
+                    console.error('❌ 加载订阅失败:', e);
+                }
+                
+                // 默认订阅
+                const defaultSubs = [
+                    {symbol: '000001', name: '平安银行', addedAt: new Date().toISOString()},
+                    {symbol: '600519', name: '贵州茅台', addedAt: new Date().toISOString()},
+                    {symbol: '000858', name: '五粮液', addedAt: new Date().toISOString()},
+                    {symbol: '300750', name: '宁德时代', addedAt: new Date().toISOString()}
+                ];
+                this.saveSubscriptions(defaultSubs);
+                return defaultSubs;
+            }
+
+            saveSubscriptions(subs = this.subscriptions) {
+                try {
+                    localStorage.setItem(this.storageKey, JSON.stringify(subs));
+                    console.log(`💾 已保存 ${subs.length} 个订阅`);
+                    return true;
+                } catch (e) {
+                    console.error('❌ 保存订阅失败:', e);
+                    alert('保存失败，请检查浏览器存储空间');
+                    return false;
+                }
+            }
+
+            addStock(symbol, name) {
+                symbol = symbol.trim().toUpperCase();
+                name = name.trim();
+                
+                if (!symbol || !name) {
+                    alert('请输入股票代码和名称');
+                    return false;
+                }
+                
+                // 检查重复
+                if (this.subscriptions.find(sub => sub.symbol === symbol)) {
+                    alert('该股票已在订阅列表中');
+                    return false;
+                }
+                
+                // 添加订阅
+                this.subscriptions.push({
+                    symbol: symbol,
+                    name: name,
+                    addedAt: new Date().toISOString()
+                });
+                
+                if (this.saveSubscriptions()) {
+                    this.render();
+                    return true;
+                }
+                return false;
+            }
+
+            removeStock(symbol) {
+                if (confirm(`确定要取消订阅 ${symbol} 吗？`)) {
+                    this.subscriptions = this.subscriptions.filter(sub => sub.symbol !== symbol);
+                    this.saveSubscriptions();
+                    this.render();
+                }
+            }
+
+            render() {
+                const container = document.getElementById('subscriptionList');
+                const counter = document.getElementById('stockCount');
+                
+                counter.textContent = this.subscriptions.length;
+                
+                if (this.subscriptions.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            暂无订阅股票<br>
+                            <small>添加您关注的股票开始使用</small>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = this.subscriptions.map(sub => `
+                    <div class="subscription-item">
+                        <div class="stock-info">
+                            <h4>${sub.symbol}</h4>
+                            <p>${sub.name}</p>
+                            <small>添加于: ${new Date(sub.addedAt).toLocaleDateString()}</small>
+                        </div>
+                        <button class="remove-btn" onclick="manager.removeStock('${sub.symbol}')">
+                            删除
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            getStorageInfo() {
+                const data = localStorage.getItem(this.storageKey);
+                const size = data ? (data.length / 1024).toFixed(2) : '0';
+                const count = this.subscriptions.length;
+                
+                return {
+                    count: count,
+                    size: size + 'KB',
+                    lastUpdate: new Date().toLocaleString(),
+                    storageAvailable: this.testStorage()
+                };
+            }
+
+            testStorage() {
+                try {
+                    const test = '__storage_test__';
+                    localStorage.setItem(test, test);
+                    localStorage.removeItem(test);
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            exportData() {
+                const data = {
+                    subscriptions: this.subscriptions,
+                    exportDate: new Date().toISOString(),
+                    version: '1.0'
+                };
+                
+                const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `marketbrew_backup_${new Date().getTime()}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            importData() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.json';
+                input.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            if (data.subscriptions && Array.isArray(data.subscriptions)) {
+                                if (confirm(`确定要导入 ${data.subscriptions.length} 个订阅吗？这会覆盖现有数据。`)) {
+                                    this.subscriptions = data.subscriptions;
+                                    this.saveSubscriptions();
+                                    this.render();
+                                    alert('导入成功！');
+                                }
+                            } else {
+                                alert('文件格式错误');
+                            }
+                        } catch (e) {
+                            alert('文件解析失败：' + e.message);
+                        }
+                    };
+                    reader.readAsText(file);
+                };
+                input.click();
+            }
+        }
+
+        // 初始化管理器
+        const manager = new SimpleStorageManager();
+        
+        // 全局函数
+        function addStock() {
+            const input = document.getElementById('stockInput');
+            const value = input.value.trim();
+            
+            if (!value) {
+                alert('请输入股票信息');
+                return;
+            }
+            
+            // 简单解析
+            let symbol, name;
+            if (value.includes(' ')) {
+                [symbol, name] = value.split(' ');
+            } else if (/^\d{6}$/.test(value)) {
+                symbol = value;
+                name = `股票${value}`;
+            } else {
+                name = value;
+                symbol = 'CODE' + Date.now().toString().slice(-6);
+            }
+            
+            if (manager.addStock(symbol, name)) {
+                input.value = '';
+            }
+        }
+
+        function showStorageInfo() {
+            const info = manager.getStorageInfo();
+            const message = `
+📊 MarketBrew 存储详情
+
+📈 订阅数量: ${info.count} 个
+💾 存储大小: ${info.size}
+🔄 最后更新: ${info.lastUpdate}
+✅ 存储状态: ${info.storageAvailable ? '正常' : '异常'}
+
+🛡️ 数据保护:
+• 使用 localStorage 永久存储
+• 关闭浏览器不会丢失
+• 支持数据导出备份
+• 自动迁移旧版本数据
+
+💡 提示: 定期导出备份以防万一
+            `.trim();
+            
+            alert(message);
+        }
+
+        function clearAllData() {
+            if (confirm('⚠️ 确定要清除所有订阅数据吗？\n此操作不可恢复！建议先导出备份。')) {
+                localStorage.removeItem(manager.storageKey);
+                alert('✅ 所有数据已清除');
+                location.reload();
+            }
+        }
+
+        function exportData() {
+            manager.exportData();
+        }
+
+        function importData() {
+            manager.importData();
+        }
+
+        // 监听回车键
+        document.getElementById('stockInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addStock();
+        });
+
+        // 页面加载完成提示
+        window.addEventListener('load', () => {
+            console.log('🎉 MarketBrew 简化版加载完成');
+            console.log('💾 数据永久保存，关闭浏览器不会丢失');
+        });
+    </script>
+</body>
+</html>

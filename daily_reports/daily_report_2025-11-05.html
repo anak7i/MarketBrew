@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek AI每日交易日报 - 2025-11-05</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header .date {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .market-overview {
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+        .market-overview h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .market-overview .content-text {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            backdrop-filter: blur(10px);
+        }
+        .signals-section {
+            background: #f8f9fa;
+            border-left: 5px solid #28a745;
+        }
+        .signals-section h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .signal-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .signal-card:hover {
+            transform: translateY(-3px);
+        }
+        .signal-card.buy { border-left-color: #28a745; }
+        .signal-card.sell { border-left-color: #dc3545; }
+        .signal-card.hold { border-left-color: #ffc107; }
+        .signal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .stock-info {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .action-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+        }
+        .action-badge.buy { background: #28a745; }
+        .action-badge.sell { background: #dc3545; }
+        .action-badge.hold { background: #ffc107; color: #333; }
+        .analysis-text {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .footer p {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+        .timestamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="timestamp">生成时间: 16:33:59</div>
+            <h1>📊 DeepSeek AI每日交易日报</h1>
+            <div class="date">2025-11-05</div>
+        </div>
+
+        <div class="content">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">买入信号</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">卖出信号</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">27</div>
+                    <div class="stat-label">持有观望</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">443</div>
+                    <div class="stat-label">覆盖股票</div>
+                </div>
+            </div>
+
+            <div class="section market-overview">
+                <h2>🌅 市场总览</h2>
+                <div class="content-text">
+                    【A股市场总览】<br><br>1. 市场整体状态<br>市场呈现明显观望态势，29只代表性个股中仅2只获买入建议，占比不足7%，显示当前市场情绪偏谨慎。无个股触发卖出信号，反映市场未现恐慌性抛压，整体处于震荡整理阶段。<br><br>2. 主要板块表现<br>- 防御性板块表现相对稳健，消费、医药等板块获资金关注<br>- 科技板块分化明显，仅少数优质标的获机构青睐<br>- 金融、周期板块整体维持震荡格局<br><br>3. 资金流向特征<br>- 增量资金入场意愿不足，存量资金博弈特征显著<br>- 资金集中流向少数确定性较高的优质标的<br>- 机构
+                </div>
+            </div>
+
+            <div class="section signals-section">
+                <h2>📈 买入信号 (2只)</h2>
+                <div class="signals-grid">
+
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <div class="stock-info">600036 招商银行</div>
+                            <div class="action-badge buy">买入</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥42.33<br>
+                            <strong>分析:</strong> ### 招商银行（600036）日报分析<br><br>**操作建议：买入**  <br>**关键理由：**  <br>- **技术面**：连续3日放量上涨，股价突破前期高点，短期趋势转强。  <br>- **资金面**：成交量显著放大，11月3日单日成交92.2万手，显示资金积极入场。  <br><br>**风险提示：**  <br>- 短期涨幅较大，需警惕获利盘抛压导致的回调风险。  <br>- 若后续量能无法持续，上涨动能可能减弱。
+                        </div>
+                    </div>
+
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <div class="stock-info">300041 股票300041</div>
+                            <div class="action-badge buy">买入</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥12.50<br>
+                            <strong>分析:</strong> ### 股票300041日报分析  <br>**操作建议：持有**  <br>**关键理由：技术面缩量企稳**  <br>- 近3日股价稳定在12.50元，成交量仅14.85万手，呈现缩量整理态势，抛压减弱。  <br>- 若后续放量突破12.60元压力位，可观察买入机会。  <br><br>**风险提示：**  <br>1. **流动性不足**：单日成交稀疏，易受大单冲击导致价格波动。  <br>2. **方向待确认**：需关注能否放量突破盘整区间，否则可能延续震荡。
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section signals-section">
+                <h2>👀 重点关注 (前10只)</h2>
+                <div class="signals-grid">
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">600519 贵州茅台</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥1430.18<br>
+                            <strong>分析:</strong> 【贵州茅台(600519)日报分析】<br><br>操作建议：持有<br>关键理由：股价在1430元附近窄幅震荡，连续3日收盘价波动不足5元，呈现缩量整理态势。10月31日放量后成交量快速萎缩，显示抛压减轻，短期存在技术性修复需求。<br><br>风险提示：需警惕成交量持续萎缩可能引发的流动性风险；当前价位接近近期震荡区间下沿，若有效跌破1430元支撑位，可能进一步下探1400元整数关口。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">000002 万科A</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥6.26<br>
+                            <strong>分析:</strong> **操作建议：持有**  <br>**关键理由：**  <br>1. **技术面**：股价在6.26-6.3元区间窄幅震荡，短期缺乏明确方向，成交量逐步萎缩，显示市场观望情绪较浓。  <br>2. **资金面**：近3日成交量持续下降（84.5万→68.9万→26.3万），资金参与度减弱，抛压有所缓解但买盘动力不足。  <br><br>**风险提示：**  <br>1. 若后续量能无法有效放大，可能延续弱势震荡或向下试探支撑；  <br>2. 行业政策及市场情绪波动可能加剧股价短期波动。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">000001 平安银行</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥11.53<br>
+                            <strong>分析:</strong> **平安银行（000001）3日走势日报**<br><br>**操作建议：** 持有  <br>**关键理由：**  <br>- 技术面：股价连续3日小幅上涨，呈现温和放量上行态势，短期均线支撑有效。  <br>- 资金面：11月3日及10月31日成交量显著放大，显示资金关注度提升，但11月4日缩量整理，需观察后续放量持续性。  <br><br>**风险提示：**  <br>- 成交量波动较大，若后续量能无法配合，可能面临回调压力。  <br>- 整体涨幅有限，需警惕市场情绪变化及银行板块整体波动风险。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">000858 五粮液</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥118.25<br>
+                            <strong>分析:</strong> 【五粮液(000858)三日走势分析】<br><br>操作建议：持有<br>关键理由：技术面呈现缩量企稳特征，近三日股价在118-119元区间窄幅震荡，成交量从42.1万手大幅萎缩至4.6万手，显示抛压明显减轻<br><br>风险提示：需关注成交量持续萎缩可能带来的流动性风险，若后续放量跌破118元支撑位，需警惕进一步调整风险
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">300750 宁德时代</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥384.04<br>
+                            <strong>分析:</strong> ### 宁德时代（300750）日报分析<br><br>**操作建议：持有**  <br>股价连续三日小幅回调，但成交量显著萎缩，短期抛压减弱，技术面存在企稳可能。<br><br>**关键理由：技术面**  <br>- 股价从388.77元回落至384.04元，跌幅约1.2%，调整幅度有限；  <br>- 成交量逐日收缩（34万手→26万手→1.7万手），显示空方力量衰竭；  <br>- 短期均线附近或有支撑，若放量反弹可确认止跌信号。<br><br>**风险提示：**  <br>1. 若跌破380元关口，可能引发新一轮抛压；  <br>2. 新能源行业
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">002594 比亚迪</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥98.97<br>
+                            <strong>分析:</strong> ### 比亚迪（002594）3日走势分析<br><br>**操作建议：持有**  <br>**关键理由：**  <br>- **技术面**：股价连续3日小幅回调，但成交量明显萎缩（11月4日仅2.5万手），显示抛压减弱，短期或接近支撑位。  <br>- **资金面**：11月3日、10月31日放量下跌后迅速缩量，资金分歧收窄，空方动能逐步衰竭。  <br><br>**风险提示：**  <br>- 若股价跌破98元支撑位，需警惕进一步下探风险；  <br>- 行业竞争加剧及新能源政策变动可能影响中长期走势。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">000568 泸州老窖</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥133.26<br>
+                            <strong>分析:</strong> **股票代码：000568（泸州老窖）日报分析**<br><br>**操作建议：持有**  <br>**关键理由：**  <br>1. **技术面**：股价连续3日小幅震荡，11月3日冲高后回落，近两日价格趋于稳定，显示短期支撑力度较强。  <br>2. **资金面**：成交量逐日萎缩，11月5日成交量仅为11月3日的28.6%，抛压减弱，资金观望情绪较浓。  <br><br>**风险提示：**  <br>1. 若后续成交量持续低迷，可能面临方向选择的不确定性。  <br>2. 需关注白酒行业政策及消费数据变化对板块情绪的影响。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">002415 海康威视</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥32.41<br>
+                            <strong>分析:</strong> 【海康威视（002415）三日走势分析】<br><br>操作建议：持有  <br>关键理由：技术面呈现缩量调整特征，近三日成交量由73.3万手锐减至2.4万手，股价波动收窄至32.4-32.8元区间，显示抛压逐步衰竭  <br><br>风险提示：  <br>1. 量能持续萎缩可能引发流动性风险  <br>2. 若跌破32.4元支撑位需警惕加速下行  <br>3. 三季报披露临近需防范业绩不及预期冲击
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">300059 东方财富</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥25.41<br>
+                            <strong>分析:</strong> **股票300059（东方财富）日报分析**  <br><br>**操作建议：持有**  <br>**关键理由：**  <br>1. **技术面**：股价在25.4-25.6元区间窄幅震荡，未出现明显方向性突破，短期趋势偏中性。  <br>2. **资金面**：近两日成交量显著萎缩（从249.9万手降至13.97万手），显示抛压减轻但资金观望情绪较浓。  <br><br>**风险提示：**  <br>1. 量能持续萎缩可能引发方向选择，需警惕缩量阴跌风险；  <br>2. 若跌破25.4元支撑位，短期或进一步下探。
+                        </div>
+                    </div>
+
+                    <div class="signal-card hold">
+                        <div class="signal-header">
+                            <div class="stock-info">601318 中国平安</div>
+                            <div class="action-badge hold">观望</div>
+                        </div>
+                        <div class="analysis-text">
+                            <strong>价格:</strong> ¥58.16<br>
+                            <strong>分析:</strong> ### 中国平安（601318）近3日走势分析<br><br>**操作建议：持有**  <br>**关键理由：**  <br>- **技术面**：股价在58.16-58.94区间窄幅震荡，11月4日成交量显著放大（51.8万手），显示短期多空博弈加剧，但未形成明确方向性突破。  <br>- **资金面**：11月5日成交量骤降至2.9万手，市场观望情绪浓厚，抛压有所缓解，短期或进入整理阶段。  <br><br>**风险提示：**  <br>1. 若股价跌破58.00支撑位，可能进一步下探至57.50附近；  <br>2. 成交量持续萎缩或导致
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p><strong>📊 DeepSeek AI每日交易日报</strong></p>
+            <p>基于443只A股深度分析 | 数据来源: 腾讯财经API + akshare</p>
+            <p>⚠️ 本报告仅供参考，投资有风险，决策需谨慎</p>
+            <p>生成时间: 2025-11-05 16:33:59</p>
+        </div>
+    </div>
+</body>
+</html>

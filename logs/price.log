@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/aaron/AI-Trader/agent_tools/tool_get_price_local.py", line 5, in <module>
+    from fastmcp import FastMCP
+ModuleNotFoundError: No module named 'fastmcp'

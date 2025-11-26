@@ -1,0 +1,184 @@
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+ * Serving Flask app 'market_index_service'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5008
+ * Running on http://198.18.0.1:5008
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:51:59] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:03] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:03] "GET /api/main-indices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:03] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:03] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:09] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:09] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:35] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:52:50] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:53:58] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:54:08] "GET /api/market-summary HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:54:19] "GET /api/main-indices HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Nov/2025 20:54:25] "GET /api/sector-indices HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_market_data_fetcher.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_index_service.py', reloading
+📈 MarketBrew 大盘指数服务启动中...
+=== 服务信息 ===
+🌐 服务端口: 5008
+🔗 服务地址: http://localhost:5008
+📊 数据源: 主要指数 + 行业指数 + 市场概况
+
+可用接口:
+  GET  /api/main-indices    - 获取主要指数数据
+  GET  /api/sector-indices  - 获取行业指数数据
+  GET  /api/market-summary  - 获取市场摘要(AI用)
+  GET  /api/market-status   - 获取市场状态判断
+  GET  /health             - 健康检查
+==================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:市场指数数据库初始化完成
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

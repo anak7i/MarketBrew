@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketBrew - 用户登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            color: #333;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .logo p {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-switch {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .form-switch a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-switch a:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .alert-error {
+            background: #fee;
+            color: #c53030;
+            border: 1px solid #fed7d7;
+        }
+
+        .alert-success {
+            background: #f0fff4;
+            color: #22543d;
+            border: 1px solid #c6f6d5;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .loading .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .extra-fields {
+            display: none;
+        }
+
+        .register-mode .extra-fields {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>📈 MarketBrew</h1>
+            <p>智能股票分析平台</p>
+        </div>
+
+        <div id="alertContainer"></div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>处理中...</p>
+        </div>
+
+        <form id="authForm">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group extra-fields">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">登录</button>
+        </form>
+
+        <div class="form-switch">
+            <span id="switchText">还没有账户？</span>
+            <a href="#" id="switchMode">立即注册</a>
+        </div>
+    </div>
+
+    <script>
+        class AuthManager {
+            constructor() {
+                this.isRegisterMode = false;
+                this.initEventListeners();
+            }
+
+            initEventListeners() {
+                document.getElementById('authForm').addEventListener('submit', this.handleSubmit.bind(this));
+                document.getElementById('switchMode').addEventListener('click', this.toggleMode.bind(this));
+            }
+
+            toggleMode(e) {
+                e.preventDefault();
+                this.isRegisterMode = !this.isRegisterMode;
+                
+                const container = document.querySelector('.login-container');
+                const submitBtn = document.getElementById('submitBtn');
+                const switchText = document.getElementById('switchText');
+                const switchMode = document.getElementById('switchMode');
+                
+                if (this.isRegisterMode) {
+                    container.classList.add('register-mode');
+                    submitBtn.textContent = '注册';
+                    switchText.textContent = '已有账户？';
+                    switchMode.textContent = '立即登录';
+                    document.getElementById('email').required = true;
+                } else {
+                    container.classList.remove('register-mode');
+                    submitBtn.textContent = '登录';
+                    switchText.textContent = '还没有账户？';
+                    switchMode.textContent = '立即注册';
+                    document.getElementById('email').required = false;
+                }
+                
+                this.clearAlerts();
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+                
+                // 基本验证
+                if (data.password.length < 6) {
+                    this.showAlert('密码至少需要6个字符', 'error');
+                    return;
+                }
+                
+                if (this.isRegisterMode && !data.email) {
+                    this.showAlert('注册时邮箱必填', 'error');
+                    return;
+                }
+                
+                this.setLoading(true);
+                
+                try {
+                    const endpoint = this.isRegisterMode ? '/api/auth/register' : '/api/auth/login';
+                    const response = await fetch(`http://localhost:7001${endpoint}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        // 保存用户信息和令牌
+                        localStorage.setItem('marketbrew_token', result.token);
+                        localStorage.setItem('marketbrew_user', JSON.stringify(result.user));
+                        
+                        this.showAlert(`${this.isRegisterMode ? '注册' : '登录'}成功！正在跳转...`, 'success');
+                        
+                        // 跳转到主页面
+                        setTimeout(() => {
+                            window.location.href = 'stock_subscription.html';
+                        }, 1500);
+                        
+                    } else {
+                        this.showAlert(result.error || '操作失败，请重试', 'error');
+                    }
+                } catch (error) {
+                    console.error('认证失败:', error);
+                    this.showAlert('网络错误，请检查服务器连接', 'error');
+                } finally {
+                    this.setLoading(false);
+                }
+            }
+
+            showAlert(message, type) {
+                const alertContainer = document.getElementById('alertContainer');
+                alertContainer.innerHTML = `
+                    <div class="alert alert-${type}">
+                        ${message}
+                    </div>
+                `;
+            }
+
+            clearAlerts() {
+                document.getElementById('alertContainer').innerHTML = '';
+            }
+
+            setLoading(isLoading) {
+                const loading = document.getElementById('loading');
+                const submitBtn = document.getElementById('submitBtn');
+                
+                if (isLoading) {
+                    loading.style.display = 'block';
+                    submitBtn.disabled = true;
+                } else {
+                    loading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            }
+        }
+
+        // 检查是否已登录
+        window.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('marketbrew_token');
+            const user = localStorage.getItem('marketbrew_user');
+            
+            if (token && user) {
+                // 验证令牌是否有效
+                fetch('http://localhost:7001/api/auth/profile', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = 'stock_subscription.html';
+                    } else {
+                        localStorage.removeItem('marketbrew_token');
+                        localStorage.removeItem('marketbrew_user');
+                    }
+                }).catch(() => {
+                    // 网络错误，继续显示登录页面
+                });
+            }
+            
+            new AuthManager();
+        });
+    </script>
+</body>
+</html>

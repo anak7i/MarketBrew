@@ -1,45 +1,181 @@
-import requests
+import akshare as ak
+import pandas as pd
 import os
 from dotenv import load_dotenv
 load_dotenv()
 import json
+from datetime import datetime, timedelta
+import time
 
-
-all_nasdaq_100_symbols = [
-    "NVDA", "MSFT", "AAPL", "GOOG", "GOOGL", "AMZN", "META", "AVGO", "TSLA",
-    "NFLX", "PLTR", "COST", "ASML", "AMD", "CSCO", "AZN", "TMUS", "MU", "LIN",
-    "PEP", "SHOP", "APP", "INTU", "AMAT", "LRCX", "PDD", "QCOM", "ARM", "INTC",
-    "BKNG", "AMGN", "TXN", "ISRG", "GILD", "KLAC", "PANW", "ADBE", "HON",
-    "CRWD", "CEG", "ADI", "ADP", "DASH", "CMCSA", "VRTX", "MELI", "SBUX",
-    "CDNS", "ORLY", "SNPS", "MSTR", "MDLZ", "ABNB", "MRVL", "CTAS", "TRI",
-    "MAR", "MNST", "CSX", "ADSK", "PYPL", "FTNT", "AEP", "WDAY", "REGN", "ROP",
-    "NXPI", "DDOG", "AXON", "ROST", "IDXX", "EA", "PCAR", "FAST", "EXC", "TTWO",
-    "XEL", "ZS", "PAYX", "WBD", "BKR", "CPRT", "CCEP", "FANG", "TEAM", "CHTR",
-    "KDP", "MCHP", "GEHC", "VRSK", "CTSH", "CSGP", "KHC", "ODFL", "DXCM", "TTD",
-    "ON", "BIIB", "LULU", "CDW", "GFS"
+# 扩展股票池 - 平衡型配置（450只）
+# 沪深300核心股票（200只）- 大盘蓝筹
+hs300_core_symbols = [
+    "000001", "000002", "000858", "000895", "000938", "000977", "002001", "002142", "002271", "002352",
+    "002415", "002594", "002714", "002841", "300014", "300015", "300059", "300124", "300136", "300274",
+    "300308", "300347", "300408", "300413", "300450", "300496", "300595", "300628", "300750", "300760",
+    "600000", "600009", "600015", "600016", "600028", "600030", "600031", "600036", "600048", "600050",
+    "600085", "600104", "600111", "600196", "600276", "600309", "600362", "600383", "600519", "600547",
+    "600585", "600588", "600690", "600703", "600741", "600745", "600809", "600837", "600887", "600919",
+    "600958", "600968", "600999", "601006", "601012", "601066", "601088", "601138", "601166", "601169",
+    "601186", "601211", "601229", "601238", "601288", "601318", "601328", "601336", "601360", "601390",
+    "601398", "601601", "601628", "601633", "601688", "601698", "601728", "601766", "601788", "601799",
+    "601816", "601818", "601857", "601865", "601877", "601878", "601888", "601899", "601933", "601939",
+    # 沪深300额外核心股票
+    "000063", "000100", "000157", "000166", "000301", "000333", "000338", "000423", "000568", "000625",
+    "000651", "000683", "000686", "000703", "000725", "000768", "000776", "000783", "000792", "000839",
+    "000876", "000898", "000961", "000983", "002008", "002024", "002027", "002049", "002065", "002081",
+    "002120", "002129", "002153", "002174", "002179", "002202", "002230", "002236", "002241", "002252",
+    "002304", "002311", "002317", "002332", "002344", "002371", "002405", "002410", "002422", "002456",
+    "002460", "002466", "002475", "002493", "002507", "002555", "002558", "002572", "002601", "002602",
+    "002624", "002648", "002673", "002709", "002736", "002739", "002756", "002773", "002821", "002938",
+    "002945", "002958", "600004", "600010", "600011", "600018", "600019", "600025", "600029", "600035",
+    "600038", "600039", "600058", "600061", "600066", "600068", "600089", "600110", "600115", "600150",
+    "600170", "600177", "600183", "600188", "600195", "600208", "600216", "600233", "600256", "600271"
 ]
 
-def get_daily_price(SYMBOL: str):
-    FUNCTION = "TIME_SERIES_DAILY"
-    OUTPUTSIZE = 'compact'
-    APIKEY = os.getenv("ALPHAADVANTAGE_API_KEY")
-    url = f'https://www.alphavantage.co/query?function={FUNCTION}&symbol={SYMBOL}&outputsize={OUTPUTSIZE}&apikey={APIKEY}'
-    r = requests.get(url)
-    data = r.json()
-    print(data)
-    if data.get('Note') is not None or data.get('Information') is not None:
-        print(f"Error")
-        return
-    with open(f'./daily_prices_{SYMBOL}.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-    if SYMBOL == "QQQ":
-        with open(f'./Adaily_prices_{SYMBOL}.json', 'w', encoding='utf-8') as f:
+# 创业板核心股票（150只）- 成长股
+cyb_growth_symbols = [
+    "300003", "300017", "300033", "300070", "300122", "300142", "300316", "300325", "300357", "300363",
+    "300373", "300383", "300390", "300418", "300433", "300454", "300482", "300529", "300558", "300568",
+    "300601", "300618", "300676", "300682", "300699", "300724", "300738", "300751", "300759", "300772",
+    "300782", "300896", "300919", "300957", "300979", "300999", "301015", "301029", "301048", "301056",
+    "301076", "301087", "301111", "301138", "301151", "301186", "301200", "301208", "301236", "301269",
+    "301287", "301296", "301308", "301319", "301326", "301329", "301339", "301348", "300001", "300002",
+    "300004", "300005", "300006", "300007", "300008", "300009", "300010", "300011", "300012", "300013",
+    "300016", "300018", "300019", "300020", "300021", "300022", "300023", "300024", "300025", "300026",
+    "300027", "300028", "300029", "300030", "300031", "300032", "300034", "300035", "300036", "300037",
+    "300038", "300039", "300040", "300041", "300042", "300043", "300044", "300045", "300046", "300047",
+    "300048", "300049", "300050", "300051", "300052", "300053", "300054", "300055", "300056", "300057",
+    "300058", "300060", "300061", "300062", "300063", "300064", "300065", "300066", "300067", "300068",
+    "300069", "300071", "300072", "300073", "300074", "300075", "300076", "300077", "300078", "300079",
+    "300080", "300081", "300082", "300083", "300084", "300085", "300086", "300087", "300088", "300089",
+    "300090", "300091", "300092", "300093", "300094", "300095", "300096", "300097", "300098", "300099"
+]
+
+# 科创板核心股票（100只）- 科技前沿
+kc_tech_symbols = [
+    "688009", "688012", "688036", "688050", "688065", "688111", "688126", "688169", "688180", "688187",
+    "688208", "688223", "688256", "688271", "688290", "688303", "688363", "688396", "688561", "688599",
+    "688981", "689009", "688001", "688002", "688003", "688005", "688006", "688007", "688008", "688010",
+    "688011", "688013", "688014", "688015", "688016", "688017", "688018", "688019", "688020", "688021",
+    "688022", "688023", "688024", "688025", "688026", "688027", "688028", "688029", "688030", "688031",
+    "688032", "688033", "688034", "688035", "688037", "688038", "688039", "688040", "688041", "688042",
+    "688043", "688044", "688045", "688046", "688047", "688048", "688049", "688051", "688052", "688053",
+    "688055", "688056", "688057", "688058", "688059", "688060", "688061", "688062", "688063", "688066",
+    "688067", "688068", "688069", "688070", "688071", "688072", "688073", "688075", "688076", "688077",
+    "688078", "688079", "688080", "688081", "688082", "688083", "688085", "688086", "688087", "688088"
+]
+
+# 合并所有股票池 - 完整的450只股票
+all_hs300_symbols = hs300_core_symbols + cyb_growth_symbols + kc_tech_symbols
+
+# 检查已有数据文件
+import glob
+existing_files = glob.glob('./daily_prices_[0-9]*.json')
+existing_symbols = [f.split('_')[-1].replace('.json', '') for f in existing_files]
+print(f"发现 {len(existing_symbols)} 只已有A股数据")
+print(f"目标获取 {len(all_hs300_symbols)} 只股票数据")
+
+def get_stock_info_mapping():
+    """获取股票代码和名称的映射关系"""
+    try:
+        # 获取沪深股票列表
+        stock_info = ak.stock_info_a_code_name()
+        return dict(zip(stock_info['code'], stock_info['name']))
+    except Exception as e:
+        print(f"获取股票信息失败: {e}")
+        return {}
+
+def get_daily_price_akshare(symbol: str):
+    """
+    使用akshare获取A股日线数据
+    symbol: 股票代码，如 '000001' (不带后缀)
+    """
+    try:
+        print(f"正在获取股票 {symbol} 的数据...")
+        
+        # 获取股票历史数据，最近500天
+        end_date = datetime.now().strftime('%Y%m%d')
+        start_date = (datetime.now() - timedelta(days=500)).strftime('%Y%m%d')
+        
+        # 根据股票代码判断市场
+        if symbol.startswith('60') or symbol.startswith('68'):
+            full_symbol = f"sh{symbol}"  # 上交所
+        else:
+            full_symbol = f"sz{symbol}"  # 深交所
+            
+        # 获取股票历史数据
+        df = ak.stock_zh_a_hist(symbol=symbol, period="daily", start_date=start_date, end_date=end_date, adjust="")
+        
+        if df.empty:
+            print(f"股票 {symbol} 无数据")
+            return
+        
+        # 获取股票名称
+        stock_info = get_stock_info_mapping()
+        stock_name = stock_info.get(symbol, symbol)
+        
+        # 转换为Alpha Vantage格式
+        time_series_data = {}
+        for index, row in df.iterrows():
+            date_str = row['日期'].strftime('%Y-%m-%d')
+            time_series_data[date_str] = {
+                "1. buy price": str(row['开盘']),
+                "2. high": str(row['最高']),
+                "3. low": str(row['最低']),
+                "4. sell price": str(row['收盘']),
+                "5. volume": str(row['成交量'])
+            }
+        
+        # 构造与原格式兼容的数据结构
+        data = {
+            "Meta Data": {
+                "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+                "2. Symbol": symbol,
+                "3. Last Refreshed": datetime.now().strftime('%Y-%m-%d'),
+                "4. Output Size": "Compact",
+                "5. Time Zone": "Asia/Shanghai"
+            },
+            "Time Series (Daily)": time_series_data
+        }
+        
+        # 保存数据
+        filename = f'./daily_prices_{symbol}.json'
+        with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
+        
+        print(f"股票 {symbol}({stock_name}) 数据获取完成")
+        
+        # 如果是000001，也保存为基准指数数据
+        if symbol == "000001":
+            with open(f'./Adaily_prices_{symbol}.json', 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+        
+        # 添加延迟避免请求过于频繁
+        time.sleep(0.1)
+        
+    except Exception as e:
+        print(f"获取股票 {symbol} 数据时出错: {e}")
+
+def get_daily_price(SYMBOL: str):
+    """保留原函数名，重定向到akshare版本"""
+    return get_daily_price_akshare(SYMBOL)
 
 
 
 if __name__ == "__main__":
-    for symbol in all_nasdaq_100_symbols:
-        get_daily_price(symbol)
-
-    get_daily_price("QQQ")
+    print("开始获取A股数据...")
+    print(f"计划获取 {len(all_hs300_symbols)} 只股票的数据")
+    
+    # 获取需要下载的股票列表（跳过已有的）
+    need_download = [symbol for symbol in all_hs300_symbols if symbol not in existing_symbols]
+    print(f"需要新下载 {len(need_download)} 只股票数据")
+    
+    if need_download:
+        for i, symbol in enumerate(need_download, 1):
+            print(f"进度: {i}/{len(need_download)} (总体: {len(existing_symbols)+i}/{len(all_hs300_symbols)})")
+            get_daily_price(symbol)
+    else:
+        print("所有股票数据已存在，无需重新下载")
+    
+    print("A股数据获取完成！")

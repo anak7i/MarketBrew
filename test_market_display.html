@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试市场数据显示</title>
+</head>
+<body>
+    <h1>测试市场数据显示</h1>
+    <div id="marketData"></div>
+    <div id="formattedData"></div>
+    
+    <script>
+        // 格式化市场分析文本
+        function formatMarketAnalysis(marketContext) {
+            if (!marketContext) return '';
+            
+            // 解析市场环境数据
+            const lines = marketContext.split('\n');
+            let formattedText = '';
+            
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+                
+                if (line.startsWith('市场环境:')) {
+                    return; // 跳过标题
+                } else if (line.startsWith('大盘:')) {
+                    const content = line.replace('大盘:', '').trim();
+                    formattedText += `<strong>📈 大盘走势：</strong>${content}<br><br>`;
+                } else if (line.startsWith('指数:')) {
+                    const content = line.replace('指数:', '').trim();
+                    formattedText += `<strong>📊 主要指数：</strong>${content}<br><br>`;
+                } else if (line.startsWith('涨跌:')) {
+                    const content = line.replace('涨跌:', '').trim();
+                    formattedText += `<strong>📶 涨跌分布：</strong>${content}<br><br>`;
+                } else if (line.startsWith('情绪:')) {
+                    const content = line.replace('情绪:', '').trim();
+                    formattedText += `<strong>💭 市场情绪：</strong>${content}`;
+                } else if (line.startsWith('换手:')) {
+                    const content = line.replace('换手:', '').trim();
+                    formattedText += ` | <strong>🔄 换手率：</strong>${content}`;
+                } else if (line.startsWith('热点:')) {
+                    const content = line.replace('热点:', '').trim();
+                    let hotspots = content;
+                    try {
+                        const parsed = JSON.parse(content);
+                        if (Array.isArray(parsed)) {
+                            hotspots = parsed.join('、');
+                        }
+                    } catch (e) {
+                        // 如果不是JSON格式，直接使用原文本
+                    }
+                    formattedText += `<br><br><strong>🔥 热点板块：</strong>${hotspots}`;
+                }
+            });
+            
+            return formattedText || marketContext.replace(/\n/g, '<br>');
+        }
+
+        // 测试API调用
+        fetch('http://localhost:8526/api/decisions')
+        .then(response => response.json())
+        .then(data => {
+            console.log('API返回数据:', data);
+            document.getElementById('marketData').innerHTML = `
+                <h2>原始市场数据:</h2>
+                <pre>${JSON.stringify(data.market_context, null, 2)}</pre>
+            `;
+            
+            if (data.market_context) {
+                const formatted = formatMarketAnalysis(data.market_context);
+                document.getElementById('formattedData').innerHTML = `
+                    <h2>格式化后的市场数据:</h2>
+                    <div style="border: 1px solid #ccc; padding: 15px; background: #f9f9f9;">
+                        ${formatted}
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('API调用失败:', error);
+            document.getElementById('marketData').innerHTML = '<p style="color: red;">API调用失败: ' + error.message + '</p>';
+        });
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@ load_dotenv()
 
 # Import tools and prompts
 from tools.general_tools import get_config_value, write_config_value
-from prompts.agent_prompt import all_nasdaq_100_symbols
+from prompts.agent_prompt import all_hs300_symbols
 
 
 # Agent class mapping table - for dynamic import and instantiation
@@ -183,7 +183,7 @@ async def main(config_path=None):
             agent = AgentClass(
                 signature=signature,
                 basemodel=basemodel,
-                stock_symbols=all_nasdaq_100_symbols,
+                stock_symbols=all_hs300_symbols,
                 log_path=log_path,
                 max_steps=max_steps,
                 max_retries=max_retries,

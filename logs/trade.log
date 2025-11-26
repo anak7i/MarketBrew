@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/aaron/AI-Trader/agent_tools/tool_trade.py", line 1, in <module>
+    from fastmcp import FastMCP
+ModuleNotFoundError: No module named 'fastmcp'

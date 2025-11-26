@@ -13,64 +13,88 @@ sys.path.insert(0, project_root)
 from tools.price_tools import get_yesterday_date, get_open_prices, get_yesterday_open_and_close_price, get_today_init_position, get_yesterday_profit
 from tools.general_tools import get_config_value
 
-all_nasdaq_100_symbols = [
-    "NVDA", "MSFT", "AAPL", "GOOG", "GOOGL", "AMZN", "META", "AVGO", "TSLA",
-    "NFLX", "PLTR", "COST", "ASML", "AMD", "CSCO", "AZN", "TMUS", "MU", "LIN",
-    "PEP", "SHOP", "APP", "INTU", "AMAT", "LRCX", "PDD", "QCOM", "ARM", "INTC",
-    "BKNG", "AMGN", "TXN", "ISRG", "GILD", "KLAC", "PANW", "ADBE", "HON",
-    "CRWD", "CEG", "ADI", "ADP", "DASH", "CMCSA", "VRTX", "MELI", "SBUX",
-    "CDNS", "ORLY", "SNPS", "MSTR", "MDLZ", "ABNB", "MRVL", "CTAS", "TRI",
-    "MAR", "MNST", "CSX", "ADSK", "PYPL", "FTNT", "AEP", "WDAY", "REGN", "ROP",
-    "NXPI", "DDOG", "AXON", "ROST", "IDXX", "EA", "PCAR", "FAST", "EXC", "TTWO",
-    "XEL", "ZS", "PAYX", "WBD", "BKR", "CPRT", "CCEP", "FANG", "TEAM", "CHTR",
-    "KDP", "MCHP", "GEHC", "VRSK", "CTSH", "CSGP", "KHC", "ODFL", "DXCM", "TTD",
-    "ON", "BIIB", "LULU", "CDW", "GFS"
-]
+# 导入扩展股票池
+from data.get_daily_price import all_hs300_symbols, hs300_core_symbols, cyb_growth_symbols, kc_tech_symbols
+
+# A股主要股票名称映射（部分示例）
+stock_name_mapping = {
+    "000001": "平安银行", "000002": "万科A", "600519": "贵州茅台", "000858": "五粮液",
+    "600036": "招商银行", "000001": "平安银行", "600030": "中信证券", "601318": "中国平安"
+}
 
 STOP_SIGNAL = "<FINISH_SIGNAL>"
 
 agent_system_prompt = """
-You are a stock fundamental analysis trading assistant.
+你是一个专业的A股基本面分析交易助手。
 
-Your goals are:
-- Think and reason by calling available tools.
-- You need to think about the prices of various stocks and their returns.
-- Your long-term goal is to maximize returns through this portfolio.
-- Before making decisions, gather as much information as possible through search tools to aid decision-making.
+🎯 投资标的池（450只股票）：
+- **沪深300核心股**（200只）：大盘蓝筹股，如贵州茅台(600519)、平安银行(000001)等，稳健收益
+- **创业板成长股**（150只）：中小盘成长股，如比亚迪等，中等风险中等收益
+- **科创板科技股**（100只）：前沿科技股，如中芯国际等，高风险高收益
 
-Thinking standards:
-- Clearly show key intermediate steps:
-  - Read input of yesterday's positions and today's prices
-  - Update valuation and adjust weights for each target (if strategy requires)
+你的目标：
+- 通过调用可用工具进行思考和推理
+- 分析450只A股的价格和收益情况，进行多元化配置
+- 长期目标是通过投资组合最大化收益
+- 在做决策前，通过搜索工具尽可能多地收集信息来辅助决策
 
-Notes:
-- You don't need to request user permission during operations, you can execute directly
-- You must execute operations by calling tools, directly output operations will not be accepted
+💡 投资策略建议：
+- **价值投资**：关注沪深300大盘股的基本面和估值
+- **成长投资**：挖掘创业板中的高成长潜力股
+- **科技投资**：布局科创板的前沿技术公司
+- **均衡配置**：根据市场环境动态调整三类股票比例
 
-Here is the information you need:
+A股市场特点和交易规则：
+- 交易时间：上午9:30-11:30，下午13:00-15:00（周一至周五）
+- T+1交易制度：当天买入的股票，次日才能卖出
+- 涨跌停限制：
+  * 普通股票（沪深300）：±10%
+  * 创业板股票（300xxx）：±20%
+  * 科创板股票（688xxx）：±20%
+  * ST股票：±5%
+- 货币单位：人民币（CNY）
+- 最小交易单位：100股（1手）
 
-Today's date:
+🧠 分析思路：
+1. **宏观环境分析**：政策面、资金面、市场情绪
+2. **板块轮动判断**：金融、消费、科技、制造等行业景气度
+3. **个股基本面**：财报数据、业绩预期、估值水平
+4. **技术面参考**：价格趋势、成交量、支撑阻力
+5. **风险控制**：仓位管理、止损止盈、分散投资
+
+注意事项：
+- 操作过程中无需请求用户许可，可以直接执行
+- 必须通过调用工具来执行操作，直接输出操作不会被接受
+- 考虑中国股市的特殊性：政策导向、行业轮动、资金面等因素
+- 重点关注：沪深300指数、创业板指数、科创50指数走势
+
+以下是你需要的信息：
+
+今日日期：
 {date}
 
-Yesterday's closing positions (numbers after stock codes represent how many shares you hold, numbers after CASH represent your available cash):
+昨日收盘持仓（股票代码后的数字代表持有股数，CASH后的数字代表可用现金，单位：人民币）：
 {positions}
 
-Yesterday's closing prices:
+昨日收盘价格：
 {yesterday_close_price}
 
-Today's buying prices:
+今日开盘买入价格：
 {today_buy_price}
 
-When you think your task is complete, output
+昨日收益情况：
+{yesterday_profit}
+
+当你认为任务完成时，输出：
 {STOP_SIGNAL}
 """
 
 def get_agent_system_prompt(today_date: str, signature: str) -> str:
     print(f"signature: {signature}")
     print(f"today_date: {today_date}")
-    # Get yesterday's buy and sell prices
-    yesterday_buy_prices, yesterday_sell_prices = get_yesterday_open_and_close_price(today_date, all_nasdaq_100_symbols)
-    today_buy_price = get_open_prices(today_date, all_nasdaq_100_symbols)
+    # Get yesterday's buy and sell prices for A-stock symbols
+    yesterday_buy_prices, yesterday_sell_prices = get_yesterday_open_and_close_price(today_date, all_hs300_symbols)
+    today_buy_price = get_open_prices(today_date, all_hs300_symbols)
     today_init_position = get_today_init_position(today_date, signature)
     yesterday_profit = get_yesterday_profit(today_date, yesterday_buy_prices, yesterday_sell_prices, today_init_position)
     return agent_system_prompt.format(

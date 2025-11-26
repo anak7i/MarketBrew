@@ -1,0 +1,45 @@
+{
+  "agent_type": "BaseAgent",
+  "market_type": "A_STOCK",
+  "currency": "CNY",
+  "description": "A股AI交易 - 仅使用DeepSeek模型",
+  "date_range": {
+    "init_date": "2025-01-02",
+    "end_date": "2025-11-01"
+  },
+  "models": [
+    {
+      "name": "deepseek-chat",
+      "basemodel": "deepseek/deepseek-chat",
+      "signature": "deepseek-chat",
+      "enabled": true,
+      "description": "DeepSeek - 中国本土AI模型，专注A股交易"
+    }
+  ],
+  "agent_config": {
+    "max_steps": 30,
+    "max_retries": 3,
+    "base_delay": 1.0,
+    "initial_cash": 100000.0,
+    "market_timezone": "Asia/Shanghai",
+    "trading_hours": {
+      "morning_start": "09:30",
+      "morning_end": "11:30",
+      "afternoon_start": "13:00",
+      "afternoon_end": "15:00"
+    },
+    "trading_rules": {
+      "t_plus_1": true,
+      "min_lot_size": 100,
+      "max_price_change": 0.10
+    }
+  },
+  "stock_universe": {
+    "index": "HS300",
+    "description": "沪深300指数成分股",
+    "count": 100
+  },
+  "log_config": {
+    "log_path": "./data/agent_data"
+  }
+}

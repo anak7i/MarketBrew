@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Mood API 测试</title>
+</head>
+<body>
+    <h1>Market Mood API 测试</h1>
+    <button onclick="testAPI()">测试API连接</button>
+    <div id="result"></div>
+
+    <script>
+        function testAPI() {
+            console.log('开始测试Market Mood API...');
+            document.getElementById('result').innerHTML = '正在请求...';
+            
+            fetch('http://localhost:5010/api/market-mood')
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('API响应:', data);
+                    document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                })
+                .catch(error => {
+                    console.error('API请求失败:', error);
+                    document.getElementById('result').innerHTML = '错误: ' + error.message;
+                });
+        }
+        
+        // 自动测试
+        window.onload = function() {
+            console.log('页面加载完成，自动测试API...');
+            testAPI();
+        };
+    </script>
+</body>
+</html>

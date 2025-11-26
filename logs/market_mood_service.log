@@ -1,0 +1,690 @@
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+ * Serving Flask app 'market_mood_service'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5010
+ * Running on http://198.18.0.1:5010
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 06:51:41] "GET /health HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 49.0分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 49.0分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 06:54:01] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 06:55:59] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/sector_heat_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 31.5分 - cautious - 观望日
+INFO:__main__:✅ Market Mood分析完成: 31.5分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:08:16] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 29.2分 - cautious - 观望日
+INFO:__main__:✅ Market Mood分析完成: 29.2分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:12:32] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:13:49] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:13:51] "GET /health HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:13:55] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 51.5分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 51.5分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:19:27] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 47.5分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 47.5分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:19:27] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 49.0分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 49.0分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:21:43] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:22:07] "GET /health HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:22:10] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:22:36] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:23:01] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:23:16] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:23:19] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/capital_flow_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 39.2分 - cautious - 观望日
+INFO:__main__:✅ Market Mood分析完成: 39.2分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 07:30:44] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 46.8分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 46.8分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:06:19] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:14:07] "GET /health HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 恐慌(28.0) - 熊市氛围
+INFO:market_mood_analyzer:情绪指标: 13.0 (恐惧贪婪:28.0, 极端信号:1个)
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 45.3分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 45.3分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:14:19] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 恐慌(33.0) - 熊市氛围
+INFO:market_mood_analyzer:情绪指标: 18.0 (恐惧贪婪:33.0, 极端信号:1个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 40.8分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 40.8分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:21:07] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(65.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 60.0 (恐惧贪婪:65.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 45.0分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 45.0分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:21:36] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(43.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 38.0 (恐惧贪婪:43.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 45.3分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 45.3分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:27:10] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:27:21] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(59.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 54.0 (恐惧贪婪:59.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 39.4分 - cautious - 观望日
+INFO:__main__:✅ Market Mood分析完成: 39.4分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 05:31:06] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_service.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 73.0 (恐惧贪婪:78.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:05:39] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 73.0 (恐惧贪婪:78.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:07:26] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 73.0 (恐惧贪婪:78.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:07:36] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(78.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 73.0 (恐惧贪婪:78.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:08:27] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(57.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(57.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 52.0 (恐惧贪婪:57.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:09:07] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(57.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 52.0 (恐惧贪婪:57.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 51.7分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 51.7分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:10:58] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(80.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 75.0 (恐惧贪婪:80.0, 极端信号:1个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 50.2分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 50.2分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:15:22] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(80.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(80.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 75.0 (恐惧贪婪:80.0, 极端信号:1个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:15:43] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📋 使用缓存的Market Mood数据
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:16:04] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(80.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 贪婪(80.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 75.0 (恐惧贪婪:80.0, 极端信号:1个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:16:05] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度贪婪(81.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 76.0 (恐惧贪婪:81.0, 极端信号:1个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 35.4分 - cautious - 观望日
+INFO:__main__:✅ Market Mood分析完成: 35.4分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:20:59] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度贪婪(81.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度贪婪(81.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 76.0 (恐惧贪婪:81.0, 极端信号:1个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:21:01] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(46.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(46.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 41.0 (恐惧贪婪:46.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:24:24] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:🔄 强制刷新Market Mood数据...
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(46.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 41.0 (恐惧贪婪:46.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 54.4分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 54.4分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:24:31] "POST /api/market-mood/refresh HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_service.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/risk_alert_service.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度恐慌(19.0) - 熊市氛围
+INFO:market_mood_analyzer:情绪指标: 0.0 (恐惧贪婪:19.0, 极端信号:1个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 64.0分 - optimistic - 追涨日
+INFO:__main__:✅ Market Mood分析完成: 64.0分 - 追涨日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:37:06] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度恐慌(19.0) - 熊市氛围
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 极度恐慌(19.0) - 熊市氛围
+INFO:market_mood_analyzer:情绪指标: 0.0 (恐惧贪婪:19.0, 极端信号:1个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:37:40] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:🔍 开始Market Mood分析...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(55.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 50.0 (恐惧贪婪:55.0, 极端信号:0个)
+INFO:sentiment_reversal_analyzer:🔄 开始分析情绪反转信号...
+INFO:sentiment_reversal_analyzer:🔄 情绪反转分析完成: 震荡整理期 - 0个反转信号
+INFO:market_mood_analyzer:反转分析: 震荡整理期, 0个信号
+INFO:market_mood_analyzer:🎯 市场情绪分析完成: 59.0分 - neutral - 观望日
+INFO:__main__:✅ Market Mood分析完成: 59.0分 - 观望日
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:41:57] "GET /api/market-mood HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(55.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(55.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 50.0 (恐惧贪婪:55.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:42:03] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:__main__:📊 获取Market Mood详细数据...
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(55.0) - 震荡市
+INFO:sentiment_indicator_analyzer:🎭 开始分析市场情绪指标...
+INFO:sentiment_indicator_analyzer:🎭 情绪指标分析完成: 中性(55.0) - 震荡市
+INFO:market_mood_analyzer:情绪指标: 50.0 (恐惧贪婪:55.0, 极端信号:0个)
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:42:45] "GET /api/market-mood/details HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================
+INFO:werkzeug: * Restarting with stat
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:__main__:✅ Market Mood 分析器初始化成功
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+🎭 MarketBrew Market Mood 服务启动中...
+============================================================
+🌐 服务端口: 5010
+🔗 服务地址: http://localhost:5010
+🎯 功能: 市场情绪监控与投资策略建议
+
+可用接口:
+  GET  /health                    - 健康检查
+  GET  /api/market-mood           - 获取市场情绪分析
+  GET  /api/market-mood/report    - 获取详细情绪报告
+  GET  /api/market-mood/config    - 获取配置信息
+  POST /api/market-mood/refresh   - 强制刷新分析
+============================================================

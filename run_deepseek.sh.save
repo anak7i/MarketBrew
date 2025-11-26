@@ -1,0 +1,52 @@
+#!/bin/bash
+# ==============================================
+# 🚀 AI-Trader DeepSeek 一键启动脚本
+# ==============================================
+
+# 停止脚本时退出所有后台进程
+trap 'kill $(jobs -p) 2>/dev/null' EXIT
+
+echo "🔍 检查 Python 环境..."
+if ! command -v python3 &>/dev/null; then
+  echo "❌ 未检测到 python3，请先安装：brew install python"
+  exit 1
+fi
+
+# 激活虚拟环境
+if [ -d "venv" ]; then
+  echo "✅ 激活虚拟环境..."
+  source venv/bin/activate
+else
+  echo "❌ 未找到虚拟环境，请先运行：python3 -m venv venv && source venv/bin/activate"
+  exit 1
+fi
+
+# 检查 .env 文件
+if [ ! -f ".env" ]; then
+  echo "❌ 未检测到 .env 文件，请先创建并填写 API Key"
+  exit 1
+fi
+
+# 启动 MCP 工具链
+echo "⚙️ 启动 MCP 工具链..."
+cd agent_tools || exit
+nohup python start_mcp_services.py > ../logs_mcp.txt 2>&1 &
+cd ..
+
+# 等待 3 秒以确保工具链启动
+sleep 3
+
+# 启动 DeepSeek 比赛
+echo "🤖 启动 DeepSeek AI-Trader 比赛..."
+python main.py configs/deepseek.json | tee logs_run.txt
+
+# 启动本地网页服务
+echo "🌐 启动本地排行榜界面..."
+cd docs || exit
+python3 -m http.server 8000 &
+sleep 2
+open "http://localhost:8000"
+cd ..
+
+echo "✅ 一切就绪！DeepSeek 模型正在交易..."
+

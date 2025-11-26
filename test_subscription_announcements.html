@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试订阅公告功能</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            line-height: 1.6; 
+        }
+        .section { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover { background: #0056b3; }
+        #results { 
+            background: #f8f9fa; 
+            padding: 15px; 
+            border-radius: 4px; 
+            margin-top: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 订阅公告功能测试</h1>
+    
+    <div class="section">
+        <h2>1. 模拟订阅管理</h2>
+        <button class="button" onclick="addTestSubscription('000001', '平安银行')">添加 000001 平安银行</button>
+        <button class="button" onclick="addTestSubscription('600519', '贵州茅台')">添加 600519 贵州茅台</button>
+        <button class="button" onclick="clearSubscriptions()">清空订阅</button>
+        <div id="subscriptionList"></div>
+    </div>
+    
+    <div class="section">
+        <h2>2. 公告加载测试</h2>
+        <button class="button" onclick="testAnnouncementLoading()">测试公告加载</button>
+        <div id="results"></div>
+    </div>
+    
+    <script>
+        // 模拟订阅管理器
+        const mockSubscriptionManager = {
+            subscriptions: [],
+            addSubscription: function(symbol, name) {
+                this.subscriptions.push({ symbol, name });
+                this.updateDisplay();
+            },
+            removeSubscription: function(symbol) {
+                this.subscriptions = this.subscriptions.filter(sub => sub.symbol !== symbol);
+                this.updateDisplay();
+            },
+            updateDisplay: function() {
+                const container = document.getElementById('subscriptionList');
+                container.innerHTML = '<h3>当前订阅:</h3>' + 
+                    this.subscriptions.map(sub => 
+                        `<div>${sub.symbol} - ${sub.name} <button class="button" onclick="mockSubscriptionManager.removeSubscription('${sub.symbol}')">移除</button></div>`
+                    ).join('') + 
+                    (this.subscriptions.length === 0 ? '<p>暂无订阅</p>' : '');
+            }
+        };
+        
+        // 全局引用，模拟真实的subscriptionManager
+        window.subscriptionManager = mockSubscriptionManager;
+        
+        function addTestSubscription(symbol, name) {
+            mockSubscriptionManager.addSubscription(symbol, name);
+        }
+        
+        function clearSubscriptions() {
+            mockSubscriptionManager.subscriptions = [];
+            mockSubscriptionManager.updateDisplay();
+        }
+        
+        // 复制loadAnnouncements函数逻辑
+        async function testAnnouncementLoading() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '⏳ 正在加载公告...';
+            
+            try {
+                const newsApiBase = 'http://localhost:5007';
+                // 获取用户订阅的股票公告
+                const subscriptions = subscriptionManager ? subscriptionManager.subscriptions : [];
+                
+                if (subscriptions.length === 0) {
+                    resultsDiv.innerHTML = `
+                        <div style="text-align: center; color: #718096; padding: 30px; font-size: 14px;">
+                            📋 暂无订阅股票<br>
+                            <small style="font-size: 12px;">请先添加订阅股票以查看相关公告</small>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                resultsDiv.innerHTML = `⏳ 正在获取 ${subscriptions.length} 个股票的公告...`;
+                
+                const symbols = subscriptions.slice(0, 8).map(sub => sub.symbol); // 限制最多8个股票避免请求过多
+                const promises = symbols.map(symbol => 
+                    fetch(`${newsApiBase}/api/announcements/${symbol}?days=7&limit=2`)
+                        .then(res => res.json())
+                        .catch(() => ({ success: false, error: 'API请求失败' }))
+                );
+
+                const results = await Promise.all(promises);
+                let allAnnouncements = [];
+
+                results.forEach((data, index) => {
+                    if (data.success && data.announcements) {
+                        const symbolAnnouncements = data.announcements.map(ann => ({
+                            ...ann,
+                            symbol: symbols[index]
+                        }));
+                        allAnnouncements.push(...symbolAnnouncements);
+                    }
+                });
+
+                // 按重要性和时间排序
+                allAnnouncements.sort((a, b) => {
+                    if (a.importance_level !== b.importance_level) {
+                        return (b.importance_level || 0) - (a.importance_level || 0);
+                    }
+                    return new Date(b.publish_date) - new Date(a.publish_date);
+                });
+
+                if (allAnnouncements.length > 0) {
+                    const html = `
+                        <h3>📋 获取到 ${allAnnouncements.length} 条公告</h3>
+                        ${allAnnouncements.map(ann => {
+                            const formatTime = (dateStr) => {
+                                const date = new Date(dateStr);
+                                return `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+                            };
+                            
+                            return `
+                                <div style="border: 1px solid #eee; padding: 15px; margin: 10px 0; border-radius: 4px; background: white;">
+                                    <div style="font-weight: bold; color: #333;">[${ann.symbol}] ${ann.title}</div>
+                                    <div style="font-size: 12px; color: #666; margin: 5px 0;">
+                                        ${ann.announcement_type || '企业公告'} • ${formatTime(ann.publish_date)}
+                                        ${ann.source_url ? `• <a href="${ann.source_url}" target="_blank" style="color: #667eea;">🔗 原文</a>` : ''}
+                                    </div>
+                                    ${ann.deepseek_analysis ? `
+                                        <div style="margin-top: 8px; padding: 8px; background: #f8fafc; border-radius: 4px; font-size: 12px; color: #4a5568;">
+                                            <span style="color: #667eea; font-weight: 500;">🤖 AI解读：</span>
+                                            ${ann.deepseek_analysis.analysis}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                    `;
+                    resultsDiv.innerHTML = html;
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div style="text-align: center; color: #718096; padding: 30px;">
+                            📋 暂无公告数据<br>
+                            <small>可能是API服务未响应</small>
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('公告加载失败:', error);
+                resultsDiv.innerHTML = `
+                    <div style="color: red; padding: 20px;">
+                        ❌ 公告加载失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // 初始化显示
+        mockSubscriptionManager.updateDisplay();
+    </script>
+</body>
+</html>

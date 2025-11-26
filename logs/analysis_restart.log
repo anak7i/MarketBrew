@@ -1,0 +1,22 @@
+/Users/aaron/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🤖 DeepSeek智能分析API服务启动
+==================================================
+📡 服务端口: 5001
+🔑 API密钥: 已配置
+⚡ 访问地址: http://localhost:5001
+🩺 健康检查: http://localhost:5001/health
+🔗 LangChain增强: 已集成
+==================================================
+📋 可用接口:
+  传统接口:
+    POST /api/stock-analysis        - 个股分析
+    POST /api/market-analysis       - 市场分析
+  LangChain增强接口:
+    POST /api/langchain/stock-analysis   - 结构化个股分析
+    POST /api/langchain/market-analysis  - Few-shot市场分析
+==================================================
+ * Serving Flask app 'deepseek_analysis_api'
+ * Debug mode: off
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.

@@ -1,0 +1,999 @@
+INFO:__main__:启动风险警报服务...
+ * Serving Flask app 'risk_alert_service'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5012
+ * Running on http://198.18.0.1:5012
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:36:40] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 06:36:46] "GET /api/risk/overview HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/institutional_monitor.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/real_data_fetcher.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/data_source_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Library/Python/3.9/lib/python/site-packages/akshare/bond/bond_convert.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_mood_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_temperature_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_emotion_indicators.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_emotion_indicators.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/enhanced_market_temperature_service.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/money_flow_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/market_sentiment_analyzer.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/eastmoney_api_enhanced.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890
+INFO:werkzeug: * Detected change in '/Users/aaron/Marketbrew/emq_api_client.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:__main__:启动风险警报服务...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-026-890

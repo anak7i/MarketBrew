@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek A股交易日志</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .filters {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-group label {
+            font-weight: 600;
+            color: #555;
+        }
+        .filter-select, .filter-input {
+            padding: 8px 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .trading-log {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .log-header {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 120px 100px 120px 80px 100px 120px 1fr 120px;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .log-entry {
+            display: grid;
+            grid-template-columns: 120px 100px 120px 80px 100px 120px 1fr 120px;
+            gap: 15px;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e1e5e9;
+            transition: background-color 0.3s;
+            align-items: center;
+        }
+        .log-entry:hover {
+            background-color: #f8f9fa;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .time-stamp {
+            font-size: 0.85rem;
+            color: #666;
+            font-family: 'Courier New', monospace;
+        }
+        .stock-symbol {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .action-buy {
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .action-sell {
+            background: #dc3545;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .action-hold {
+            background: #ffc107;
+            color: #333;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .price {
+            font-weight: 600;
+            color: #333;
+        }
+        .quantity {
+            color: #666;
+        }
+        .profit-positive {
+            color: #28a745;
+            font-weight: 600;
+        }
+        .profit-negative {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        .profit-neutral {
+            color: #666;
+        }
+        .logic-reason {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.3;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+        .confidence {
+            text-align: center;
+            font-weight: 600;
+        }
+        .confidence-high { color: #28a745; }
+        .confidence-medium { color: #ffc107; }
+        .confidence-low { color: #dc3545; }
+        
+        .ai-analysis {
+            background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .analysis-item {
+            background: rgba(255,255,255,0.2);
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 1200px) {
+            .log-header, .log-entry {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                text-align: left;
+            }
+            .log-header {
+                display: none;
+            }
+            .log-entry {
+                background: #f8f9fa;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                border: 1px solid #e1e5e9;
+            }
+            .log-entry > div {
+                display: flex;
+                justify-content: space-between;
+                padding: 4px 0;
+            }
+            .log-entry > div::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 DeepSeek A股交易日志</h1>
+            <p>AI驱动的交易决策记录与分析</p>
+            <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">
+                <span id="current-time"></span>
+            </p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">48</div>
+                <div class="stat-label">总交易次数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">30</div>
+                <div class="stat-label">买入操作</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">18</div>
+                <div class="stat-label">卖出操作</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">+2.34%</div>
+                <div class="stat-label">总收益率</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">68%</div>
+                <div class="stat-label">胜率</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">85%</div>
+                <div class="stat-label">AI置信度</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label>股票:</label>
+                <select class="filter-select" id="stockFilter">
+                    <option value="">全部</option>
+                    <option value="000001">000001 平安银行</option>
+                    <option value="000002">000002 万科A</option>
+                    <option value="300750">300750 宁德时代</option>
+                    <option value="600519">600519 贵州茅台</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>操作:</label>
+                <select class="filter-select" id="actionFilter">
+                    <option value="">全部</option>
+                    <option value="买入">买入</option>
+                    <option value="卖出">卖出</option>
+                    <option value="持有">持有</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>日期:</label>
+                <input type="date" class="filter-input" id="dateFilter" value="2025-11-05">
+            </div>
+            <div class="filter-group">
+                <label>置信度:</label>
+                <select class="filter-select" id="confidenceFilter">
+                    <option value="">全部</option>
+                    <option value="高">高置信度</option>
+                    <option value="中">中置信度</option>
+                    <option value="低">低置信度</option>
+                </select>
+            </div>
+        </div>
+
+                                                        <div class="ai-analysis">
+            <h3>🤖 2025-11-06 AI分析总结</h3>
+            <div class="analysis-item">
+                <strong>分析覆盖:</strong> 全市场442只股票深度分析完成
+            </div>
+            <div class="analysis-item">
+                <strong>操作建议:</strong> 发现0只股票有明确买卖信号
+            </div>
+            <div class="analysis-item">
+                <strong>主要逻辑:</strong> 基于最新价格、成交量和技术面综合判断
+            </div>
+        </div>
+            <div class="analysis-item">
+                <strong>操作建议:</strong> 发现0只股票有明确买卖信号
+            </div>
+            <div class="analysis-item">
+                <strong>主要逻辑:</strong> 基于最新价格、成交量和技术面综合判断
+            </div>
+        </div>
+            <div class="analysis-item">
+                <strong>操作建议:</strong> 发现0只股票有明确买卖信号
+            </div>
+            <div class="analysis-item">
+                <strong>主要逻辑:</strong> 基于最新价格、成交量和技术面综合判断
+            </div>
+        </div>
+            <div class="analysis-item">
+                <strong>操作建议:</strong> 发现1只股票有明确买卖信号
+            </div>
+            <div class="analysis-item">
+                <strong>主要逻辑:</strong> 基于最新价格、成交量和技术面综合判断
+            </div>
+        </div>
+            <div class="analysis-item">
+                <strong>主要逻辑:</strong> 基于技术分析+基本面+市场情绪的综合判断
+            </div>
+            <div class="analysis-item">
+                <strong>风控策略:</strong> 严格执行止损，控制单笔损失不超过2%
+            </div>
+        </div>
+
+        <div class="trading-log">
+            <div class="log-header">
+                <div>交易时间</div>
+                <div>股票代码</div>
+                <div>操作类型</div>
+                <div>数量</div>
+                <div>价格</div>
+                <div>盈亏</div>
+                <div>核心逻辑</div>
+                <div>AI置信度</div>
+            </div>
+
+                                                            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-06 09:48:57</div>
+                <div class="stock-symbol" data-label="股票:">000001 平安银行</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥11.53</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">技术面震荡整理，等待突破信号</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-06 09:48:57</div>
+                <div class="stock-symbol" data-label="股票:">000002 万科A</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">地产板块政策预期，短期观望</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-06 09:48:57</div>
+                <div class="stock-symbol" data-label="股票:">600519 贵州茅台</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥1430.18</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">白酒龙头地位稳固，高位震荡</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+<div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300015 爱尔眼科</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥12.15</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和，价格处于近期震荡区间，无明显突破信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300017 股票300017</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥11.34</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格波动不大，短期可能震荡整理</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300016 股票300016</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥8.68</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，价格处于近期震荡区间下沿，可观望等待方向选择。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300019 股票300019</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥22.12</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，价格波动小，建议观望等待放量信号</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300018 股票300018</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥11.41</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，可能处于蓄势阶段，建议观望等待方向明确</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300020 股票300020</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥3.84</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和，价格处于低位，短期观望等待放量突破信号</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300022 股票300022</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥8.72</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和，价格处于近期震荡区间，可观望等待方向突破。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300023 股票300023</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥1.09</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量为0，流动性枯竭，无法正常交易</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300021 股票300021</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥4.88</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，短期可能震荡整理，建议观望等待方向突破。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300026 股票300026</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥3.83</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，短期可能震荡整理</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300024 股票300024</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥18.14</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和，股价处于震荡区间，可观望等待方向突破</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300025 股票300025</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.41</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，股价处于低位，短期缺乏明确方向，建议观望等待放量信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300027 股票300027</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥2.62</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，可观望等待方向突破</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300028 股票300028</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥0.30</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">流动性枯竭无量跌停，需等待开板后观察资金动向</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300029 股票300029</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.70</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于低位震荡区间，短期或有技术性反弹机会</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300030 股票300030</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥8.18</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，价格处于低位，短期缺乏明确方向，建议观望等待放量信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300031 股票300031</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥23.04</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于相对低位，短期有望企稳反弹</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300032 股票300032</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥5.16</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格未明显波动，短期可能震荡，建议观望等待方向确认。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300033 股票300033</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥353.63</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量萎缩但价格稳定，短期观望等待放量突破</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:56:39</div>
+                <div class="stock-symbol" data-label="股票:">300034 股票300034</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥16.89</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于近期震荡区间中轨，可等待方向明确</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+<div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000063 股票000063</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥41.37</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价稳定，短期或有震荡，中期趋势未破位。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000002 万科A</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格波动不大，短期可能震荡整理</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000001 平安银行</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥11.53</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于近期震荡区间中轨，短期方向不明朗</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000166 股票000166</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥5.44</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，可观望等待方向突破</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000157 股票000157</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥8.25</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价未明显波动，短期可能蓄势待发</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000100 股票000100</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥4.23</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于低位震荡区间，短期可观望等待方向突破</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000333 美的集团</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥75.98</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格波动有限，短期或延续震荡走势</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000338 股票000338</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥15.81</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格稳定，短期或有震荡，可观望等待方向明确。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000301 股票000301</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥9.14</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，价格波动小，短期缺乏明确方向，建议观望等待放量突破信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000568 泸州老窖</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥133.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大伴随股价高位震荡，短期或有调整但趋势未破。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000423 股票000423</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥47.64</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，价格波动小，建议观望等待放量信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000625 股票000625</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥12.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格未明显波动，短期可能震荡整理，建议观望等待方向明确。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000686 股票000686</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥9.07</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于相对低位，短期有望震荡筑底</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000651 股票000651</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥39.87</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">格力电器放量上涨，技术面偏强但接近前高压力位，可持股观望</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000683 股票000683</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.42</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，价格处于近期震荡区间中位，短期趋势不明朗，建议观望等待方向选择</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000703 股票000703</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.53</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量偏低，价格波动小，建议观望等待放量信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000776 股票000776</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥22.13</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和，股价处于震荡区间，可观望等待方向突破。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000725 股票000725</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥3.98</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价波动不大，可能处于震荡筑底阶段，建议观望等待方向明确。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000768 股票000768</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥25.07</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于震荡区间中轨，短期趋势未明，建议观望等待方向选择。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 15:07:48</div>
+                <div class="stock-symbol" data-label="股票:">000792 股票000792</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥24.0</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格稳定，短期或有震荡，可观望等待方向明确。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+<div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">000001 平安银行</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">100股</div>
+                <div class="price" data-label="价格:">¥11.53</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大且股价处于相对低位，技术面显示反弹概率较高</div>
+                <div class="confidence confidence-high" data-label="置信度:">82%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">000002 万科A</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格波动有限，短期或维持震荡格局</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">600519 贵州茅台</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥1430.18</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">股价处于高位震荡，成交量稳定，短期趋势未明需观望</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">600036 招商银行</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥42.33</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量稳定，股价处于合理区间，银行板块基本面稳健</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">000858 五粮液</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥118.25</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量温和放大，股价处于震荡区间中轨，短期趋势未明。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">300750 宁德时代</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥384.04</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但股价震荡，短期方向不明朗，建议观望等待突破信号</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">000568 泸州老窖</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥133.26</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">股价处于高位震荡，成交量平稳，短期缺乏明确方向性信号</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">002594 比亚迪</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥98.97</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">股价在关键技术位获得支撑，成交量温和放大显示资金关注度提升</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">002415 海康威视</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥32.41</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">股价处于相对低位，成交量稳定，短期震荡筑底概率较大</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:34:33</div>
+                <div class="stock-symbol" data-label="股票:">300059 东方财富</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥25.41</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">成交量放大但价格波动不大，短期可能震荡整理</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+<div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 14:58:23</div>
+                <div class="stock-symbol" data-label="股票:">000001 平安银行</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥11.53</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">技术面：11.50支撑位有效，MACD金叉形成。基本面：三季报显示不良率下降，净利息收入稳定。策略：等待突破11.60阻力位再考虑加仓。</div>
+                <div class="confidence confidence-high" data-label="置信度:">85%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 11:23:15</div>
+                <div class="stock-symbol" data-label="股票:">000002 万科A</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">500股</div>
+                <div class="price" data-label="价格:">¥6.26</div>
+                <div class="profit-positive" data-label="盈亏:">+¥15</div>
+                <div class="logic-reason" data-label="逻辑:">政策面：房地产政策边际放松，一线城市限购松动。技术面：6.20底部双重底确认，成交量放大。基本面：销售数据环比改善，库存去化加速。</div>
+                <div class="confidence confidence-high" data-label="置信度:">78%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-05 10:45:32</div>
+                <div class="stock-symbol" data-label="股票:">300750 宁德时代</div>
+                <div class="action-sell" data-label="操作:">卖出</div>
+                <div class="quantity" data-label="数量:">100股</div>
+                <div class="price" data-label="价格:">¥102.30</div>
+                <div class="profit-positive" data-label="盈亏:">+¥280</div>
+                <div class="logic-reason" data-label="逻辑:">业绩面：Q3业绩略低于预期，毛利率承压。技术面：102元阻力位遇阻，RSI超买。策略：获利了结，等待回调至95元附近重新建仓。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">72%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-04 15:50:18</div>
+                <div class="stock-symbol" data-label="股票:">600519 贵州茅台</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥1430.18</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：白酒消费旺季到来，渠道库存健康。技术面：1430支撑位坚实，长期上升趋势完好。策略：作为核心资产长期持有，短期震荡不改变配置。</div>
+                <div class="confidence confidence-high" data-label="置信度:">92%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-04 14:23:45</div>
+                <div class="stock-symbol" data-label="股票:">000001 平安银行</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">300股</div>
+                <div class="price" data-label="价格:">¥11.42</div>
+                <div class="profit-positive" data-label="盈亏:">+¥33</div>
+                <div class="logic-reason" data-label="逻辑:">估值面：PB仅0.6倍，处于历史低位。政策面：央行降准释放流动性，银行股受益。技术面：11.40附近形成强支撑，适合逢低吸纳。</div>
+                <div class="confidence confidence-high" data-label="置信度:">88%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-04 11:15:22</div>
+                <div class="stock-symbol" data-label="股票:">300750 宁德时代</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">200股</div>
+                <div class="price" data-label="价格:">¥98.50</div>
+                <div class="profit-positive" data-label="盈亏:">+¥760</div>
+                <div class="logic-reason" data-label="逻辑:">行业面：新能源汽车销量超预期，动力电池需求旺盛。公司面：海外扩张顺利，CATL技术领先优势明显。技术面：98元支撑位获得确认。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-04 09:32:10</div>
+                <div class="stock-symbol" data-label="股票:">000002 万科A</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥6.28</div>
+                <div class="profit-negative" data-label="盈亏:">-¥50</div>
+                <div class="logic-reason" data-label="逻辑:">市场面：房地产板块整体承压，成交量低迷。公司面：销售数据环比改善但同比仍下滑。策略：维持配置不变，等待政策明确信号。</div>
+                <div class="confidence confidence-low" data-label="置信度:">45%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-03 15:45:33</div>
+                <div class="stock-symbol" data-label="股票:">002594 比亚迪</div>
+                <div class="action-sell" data-label="操作:">卖出</div>
+                <div class="quantity" data-label="数量:">100股</div>
+                <div class="price" data-label="价格:">¥265.80</div>
+                <div class="profit-positive" data-label="盈亏:">+¥520</div>
+                <div class="logic-reason" data-label="逻辑:">业绩面：Q3新能源汽车销量超预期，但毛利率有所下滑。技术面：265阻力位遇阻，KDJ指标超买。策略：兑现部分利润，降低仓位。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">70%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-03 14:22:15</div>
+                <div class="stock-symbol" data-label="股票:">000858 五粮液</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">100股</div>
+                <div class="price" data-label="价格:">¥128.50</div>
+                <div class="profit-positive" data-label="盈亏:">+¥85</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：白酒行业进入消费旺季，渠道反馈良好。技术面：128支撑位获得确认，成交量温和放大。策略：作为白酒板块补充配置。</div>
+                <div class="confidence confidence-high" data-label="置信度:">82%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-03 11:38:42</div>
+                <div class="stock-symbol" data-label="股票:">600036 招商银行</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">400股</div>
+                <div class="price" data-label="价格:">¥35.20</div>
+                <div class="profit-positive" data-label="盈亏:">+¥160</div>
+                <div class="logic-reason" data-label="逻辑:">估值面：PB仅0.8倍，股息率4.2%，价值凸显。基本面：零售业务领先，资产质量优良。技术面：35元强支撑，适合建仓。</div>
+                <div class="confidence confidence-high" data-label="置信度:">89%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-03 10:15:28</div>
+                <div class="stock-symbol" data-label="股票:">000568 泸州老窖</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥118.75</div>
+                <div class="profit-neutral" data-label="盈亏:">¥0</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：国窖1573销售稳定，品牌力持续提升。技术面：118附近震荡整理，方向待明确。策略：维持持有，等待突破信号。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">65%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-02 15:20:16</div>
+                <div class="stock-symbol" data-label="股票:">002415 海康威视</div>
+                <div class="action-sell" data-label="操作:">卖出</div>
+                <div class="quantity" data-label="数量:">200股</div>
+                <div class="price" data-label="价格:">¥32.80</div>
+                <div class="profit-negative" data-label="盈亏:">-¥120</div>
+                <div class="logic-reason" data-label="逻辑:">业绩面：安防行业需求放缓，海外业务受阻。技术面：32.5支撑失守，趋势转弱。策略：及时止损，避免更大损失。</div>
+                <div class="confidence confidence-high" data-label="置信度:">86%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-02 14:05:33</div>
+                <div class="stock-symbol" data-label="股票:">000895 双汇发展</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">300股</div>
+                <div class="price" data-label="价格:">¥25.60</div>
+                <div class="profit-positive" data-label="盈亏:">+¥90</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：食品消费稳定，猪肉价格企稳。估值面：PE仅12倍，股息率4.8%。技术面：25.5底部区域，风险有限。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">73%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-02 11:42:18</div>
+                <div class="stock-symbol" data-label="股票:">300059 东方财富</div>
+                <div class="action-buy" data-label="操作:">买入</div>
+                <div class="quantity" data-label="数量:">500股</div>
+                <div class="price" data-label="价格:">¥15.80</div>
+                <div class="profit-positive" data-label="盈亏:">+¥150</div>
+                <div class="logic-reason" data-label="逻辑:">行业面：券商板块政策利好频出，交易活跃度提升。公司面：互联网证券龙头，用户粘性强。技术面：15.6支撑有效。</div>
+                <div class="confidence confidence-high" data-label="置信度:">81%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-02 09:55:07</div>
+                <div class="stock-symbol" data-label="股票:">601318 中国平安</div>
+                <div class="action-hold" data-label="操作:">持有</div>
+                <div class="quantity" data-label="数量:">-</div>
+                <div class="price" data-label="价格:">¥42.35</div>
+                <div class="profit-negative" data-label="盈亏:">-¥85</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：保险业务稳健，科技业务投入加大。估值面：PEV仅0.5倍，严重低估。策略：长期价值投资，短期波动不影响持有。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">68%</div>
+            </div>
+
+            <div class="log-entry">
+                <div class="time-stamp" data-label="时间:">2025-11-01 15:30:45</div>
+                <div class="stock-symbol" data-label="股票:">002304 洋河股份</div>
+                <div class="action-sell" data-label="操作:">卖出</div>
+                <div class="quantity" data-label="数量:">100股</div>
+                <div class="price" data-label="价格:">¥98.20</div>
+                <div class="profit-positive" data-label="盈亏:">+¥320</div>
+                <div class="logic-reason" data-label="逻辑:">基本面：梦之蓝销售良好，但竞争加剧。技术面：98阻力位承压，短期调整概率大。策略：获利了结，等待更好买点。</div>
+                <div class="confidence confidence-medium" data-label="置信度:">75%</div>
+            </div>
+
+            <!-- 为了页面性能，这里显示最近20条记录 -->
+            <div style="text-align: center; padding: 20px; color: #666; border-top: 2px solid #e1e5e9; margin-top: 20px;">
+                <p>📄 显示最近20条交易记录 (共47条)</p>
+                <button class="btn" onclick="loadMoreRecords()" style="margin-top: 10px;">加载更多记录</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // 更新时间
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = 
+                '当前时间: ' + now.toLocaleString('zh-CN');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 过滤功能
+        function filterEntries() {
+            const stockFilter = document.getElementById('stockFilter').value;
+            const actionFilter = document.getElementById('actionFilter').value;
+            const dateFilter = document.getElementById('dateFilter').value;
+            const confidenceFilter = document.getElementById('confidenceFilter').value;
+            
+            const entries = document.querySelectorAll('.log-entry');
+            
+            entries.forEach(entry => {
+                let show = true;
+                
+                // 股票过滤
+                if (stockFilter && !entry.children[1].textContent.includes(stockFilter)) {
+                    show = false;
+                }
+                
+                // 操作过滤
+                if (actionFilter && !entry.children[2].textContent.includes(actionFilter)) {
+                    show = false;
+                }
+                
+                // 日期过滤
+                if (dateFilter) {
+                    const entryDate = entry.children[0].textContent.split(' ')[0];
+                    if (entryDate !== dateFilter) {
+                        show = false;
+                    }
+                }
+                
+                // 置信度过滤
+                if (confidenceFilter) {
+                    const confidence = parseInt(entry.children[7].textContent);
+                    if (confidenceFilter === '高' && confidence < 80) show = false;
+                    if (confidenceFilter === '中' && (confidence < 60 || confidence >= 80)) show = false;
+                    if (confidenceFilter === '低' && confidence >= 60) show = false;
+                }
+                
+                entry.style.display = show ? 'grid' : 'none';
+            });
+        }
+
+        // 绑定过滤事件
+        document.getElementById('stockFilter').addEventListener('change', filterEntries);
+        document.getElementById('actionFilter').addEventListener('change', filterEntries);
+        document.getElementById('dateFilter').addEventListener('change', filterEntries);
+        document.getElementById('confidenceFilter').addEventListener('change', filterEntries);
+
+        // 添加交互效果
+        document.querySelectorAll('.log-entry').forEach(entry => {
+            entry.addEventListener('click', function() {
+                this.style.backgroundColor = '#e3f2fd';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 1000);
+            });
+        });
+
+        // 加载更多记录
+        function loadMoreRecords() {
+            const btn = event.target;
+            btn.textContent = '⏳ 加载中...';
+            btn.disabled = true;
+            
+            // 模拟加载延迟
+            setTimeout(() => {
+                alert('📊 这是演示页面，实际系统中会从数据库加载完整的47条交易记录\n\n当前显示: 17条记录\n剩余记录: 30条\n\n功能包括:\n✅ 分页加载\n✅ 历史记录搜索\n✅ 数据导出功能');
+                btn.textContent = '加载更多记录';
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        // 页面加载完成提示
+        window.addEventListener('load', () => {
+            console.log('📊 交易日志系统已加载');
+        });
+    </script>
+</body>
+</html>

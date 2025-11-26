@@ -1,0 +1,46 @@
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "301269",
+    "3. Last Refreshed": "2025-11-05",
+    "4. Output Size": "Compact",
+    "5. Time Zone": "Asia/Shanghai"
+  },
+  "Time Series (Daily)": {
+    "2025-11-01": {
+      "1. buy price": "50.75",
+      "2. high": "52.02",
+      "3. low": "49.69",
+      "4. sell price": "50.81",
+      "5. volume": "137847"
+    },
+    "2025-11-02": {
+      "1. buy price": "48.44",
+      "2. high": "49.98",
+      "3. low": "47.89",
+      "4. sell price": "49.26",
+      "5. volume": "808807"
+    },
+    "2025-11-03": {
+      "1. buy price": "46.57",
+      "2. high": "47.40",
+      "3. low": "45.92",
+      "4. sell price": "46.55",
+      "5. volume": "117822"
+    },
+    "2025-11-04": {
+      "1. buy price": "50.11",
+      "2. high": "50.74",
+      "3. low": "49.09",
+      "4. sell price": "50.23",
+      "5. volume": "156530"
+    },
+    "2025-11-05": {
+      "1. buy price": "46.58",
+      "2. high": "48.06",
+      "3. low": "45.73",
+      "4. sell price": "47.12",
+      "5. volume": "98522"
+    }
+  }
+}
