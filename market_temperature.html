@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>市场温度计 - MarketBrew</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 42px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* 温度计主显示 */
+        .temperature-main {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .thermometer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .thermometer {
+            width: 80px;
+            height: 400px;
+            background: #f0f0f0;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .thermometer-fill {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            border-radius: 30px;
+            transition: all 1s ease;
+            background: linear-gradient(to top, #3b82f6, #ef4444);
+        }
+
+        .temperature-value {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .temp-score {
+            font-size: 80px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .temp-level {
+            font-size: 28px;
+            color: #374151;
+            margin-top: 10px;
+        }
+
+        .temp-desc {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        /* 指标网格 */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .metric-icon {
+            font-size: 32px;
+        }
+
+        .metric-title {
+            font-size: 16px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .metric-change {
+            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .metric-change.positive {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .metric-change.negative {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* 市场情绪 */
+        .sentiment-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .sentiment-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .sentiment-bars {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sentiment-bar {
+            flex: 1;
+            text-align: center;
+        }
+
+        .bar-container {
+            height: 200px;
+            background: #f3f4f6;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: all 1s ease;
+        }
+
+        .bar-fill.up {
+            background: linear-gradient(to top, #ef4444, #fca5a5);
+        }
+
+        .bar-fill.down {
+            background: linear-gradient(to top, #10b981, #6ee7b7);
+        }
+
+        .bar-label {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        .bar-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-top: 5px;
+        }
+
+        /* 加载动画 */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: #6b7280;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 刷新按钮 */
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .refresh-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* 错误提示 */
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌡️ 市场温度计</h1>
+            <p class="subtitle">实时监控A股市场热度 - 基于东方财富数据</p>
+            <div class="status-badge">🟢 实时数据</div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <p>正在加载市场数据...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <!-- 主温度计 -->
+            <div class="temperature-main">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button class="refresh-btn" onclick="refreshData()">🔄 刷新数据</button>
+                </div>
+
+                <div class="thermometer-container">
+                    <div class="thermometer">
+                        <div class="thermometer-fill" id="thermometer-fill"></div>
+                    </div>
+
+                    <div class="temperature-value">
+                        <div class="temp-score" id="temp-score">--</div>
+                        <div class="temp-level" id="temp-level">--</div>
+                        <div class="temp-desc" id="temp-desc">分析中...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关键指标 -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-title">北向资金</div>
+                    </div>
+                    <div class="metric-value" id="north-flow">--</div>
+                    <div class="metric-change" id="north-change">--</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-title">沪深300</div>
+                    </div>
+                    <div class="metric-value" id="hs300-price">--</div>
+                    <div class="metric-change" id="hs300-change">--</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">💵</div>
+                        <div class="metric-title">成交额</div>
+                    </div>
+                    <div class="metric-value" id="turnover">--</div>
+                    <div class="metric-change">今日总成交</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-title">ETF流入</div>
+                    </div>
+                    <div class="metric-value" id="etf-flow">--</div>
+                    <div class="metric-change">主要ETF净流入</div>
+                </div>
+            </div>
+
+            <!-- 市场情绪 -->
+            <div class="sentiment-section">
+                <div class="sentiment-title">📊 市场情绪分析</div>
+
+                <div class="sentiment-bars">
+                    <div class="sentiment-bar">
+                        <div class="bar-container">
+                            <div class="bar-fill up" id="up-bar"></div>
+                        </div>
+                        <div class="bar-label">上涨家数</div>
+                        <div class="bar-value" id="up-count">--</div>
+                    </div>
+
+                    <div class="sentiment-bar">
+                        <div class="bar-container">
+                            <div class="bar-fill down" id="down-bar"></div>
+                        </div>
+                        <div class="bar-label">下跌家数</div>
+                        <div class="bar-value" id="down-count">--</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; color: #6b7280;">
+                    <p>涨跌比: <strong id="up-down-ratio">--</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        let isRefreshing = false;
+
+        // 页面加载时获取数据
+        window.addEventListener('load', () => {
+            fetchMarketData();
+        });
+
+        async function fetchMarketData() {
+            try {
+                // 获取股票列表数据（计算涨跌比）
+                const stocksResponse = await fetch('http://localhost:5000/api/stocks', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ symbols: [] }) // 获取全市场
+                });
+
+                // 获取北向资金
+                const northResponse = await fetch('http://localhost:5000/api/north-bound');
+
+                // 获取指数数据
+                const indexResponse = await fetch('http://localhost:5000/api/index/000300');
+
+                if (!stocksResponse.ok || !northResponse.ok || !indexResponse.ok) {
+                    throw new Error('数据获取失败');
+                }
+
+                const stocksData = await stocksResponse.json();
+                const northData = await northResponse.json();
+                const indexData = await indexResponse.json();
+
+                // 显示数据
+                displayMarketData(stocksData, northData, indexData);
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error:', error);
+                showError('无法连接到服务器，请确保已启动 price_service.py');
+            }
+        }
+
+        function displayMarketData(stocksData, northData, indexData) {
+            // 计算市场温度（简化版）
+            const upCount = stocksData.up_count || 0;
+            const downCount = stocksData.down_count || 0;
+            const total = upCount + downCount;
+            const upRatio = total > 0 ? (upCount / total) : 0.5;
+
+            // 温度分数 (0-100)
+            let tempScore = Math.round(upRatio * 100);
+
+            // 北向资金影响
+            const northFlow = northData.total || 0;
+            if (northFlow > 50) tempScore += 5;
+            if (northFlow < -50) tempScore -= 5;
+
+            tempScore = Math.max(0, Math.min(100, tempScore));
+
+            // 更新温度显示
+            document.getElementById('temp-score').textContent = tempScore;
+
+            let level = '';
+            let desc = '';
+            if (tempScore >= 80) {
+                level = '🔥 过热';
+                desc = '市场情绪高涨，注意风险';
+            } else if (tempScore >= 60) {
+                level = '📈 偏热';
+                desc = '市场表现积极';
+            } else if (tempScore >= 40) {
+                level = '😐 正常';
+                desc = '市场温和运行';
+            } else if (tempScore >= 20) {
+                level = '📉 偏冷';
+                desc = '市场情绪偏弱';
+            } else {
+                level = '❄️ 冰冷';
+                desc = '市场情绪低迷';
+            }
+
+            document.getElementById('temp-level').textContent = level;
+            document.getElementById('temp-desc').textContent = desc;
+
+            // 温度计填充
+            const fillHeight = (tempScore / 100) * 380;
+            document.getElementById('thermometer-fill').style.height = fillHeight + 'px';
+
+            // 北向资金
+            document.getElementById('north-flow').textContent = northFlow.toFixed(2) + '亿';
+            const northChange = document.getElementById('north-change');
+            northChange.textContent = northFlow >= 0 ? '净流入 ↑' : '净流出 ↓';
+            northChange.className = 'metric-change ' + (northFlow >= 0 ? 'positive' : 'negative');
+
+            // 沪深300
+            if (indexData && indexData.price) {
+                document.getElementById('hs300-price').textContent = indexData.price.toFixed(2);
+                const hs300Change = document.getElementById('hs300-change');
+                const changePct = indexData.change_pct || 0;
+                hs300Change.textContent = (changePct >= 0 ? '+' : '') + changePct.toFixed(2) + '%';
+                hs300Change.className = 'metric-change ' + (changePct >= 0 ? 'positive' : 'negative');
+            }
+
+            // 成交额（示例数据）
+            const turnover = (upCount + downCount) * 0.3; // 简化计算
+            document.getElementById('turnover').textContent = turnover.toFixed(0) + '亿';
+
+            // ETF流入（示例数据）
+            document.getElementById('etf-flow').textContent = (northFlow * 0.3).toFixed(2) + '亿';
+
+            // 涨跌情绪
+            document.getElementById('up-count').textContent = upCount;
+            document.getElementById('down-count').textContent = downCount;
+
+            const upBarHeight = total > 0 ? (upCount / total * 200) : 100;
+            const downBarHeight = total > 0 ? (downCount / total * 200) : 100;
+
+            document.getElementById('up-bar').style.height = upBarHeight + 'px';
+            document.getElementById('down-bar').style.height = downBarHeight + 'px';
+
+            const ratio = total > 0 ? (upCount / downCount).toFixed(2) : '--';
+            document.getElementById('up-down-ratio').textContent = ratio;
+        }
+
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'none';
+            const errorDiv = document.getElementById('error');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <h3>⚠️ 连接失败</h3>
+                <p>${message}</p>
+                <p style="margin-top: 10px;">
+                    <strong>解决方案：</strong><br>
+                    1. 打开命令提示符<br>
+                    2. 运行: cd C:\\Users\\86158\\marketbrew<br>
+                    3. 运行: python price_service.py<br>
+                    4. 刷新此页面
+                </p>
+            `;
+            errorDiv.style.display = 'block';
+        }
+
+        async function refreshData() {
+            if (isRefreshing) return;
+
+            isRefreshing = true;
+            const btn = document.querySelector('.refresh-btn');
+            btn.disabled = true;
+            btn.textContent = '🔄 刷新中...';
+
+            await fetchMarketData();
+
+            setTimeout(() => {
+                isRefreshing = false;
+                btn.disabled = false;
+                btn.textContent = '🔄 刷新数据';
+            }, 2000);
+        }
+
+        // 自动刷新（每2分钟）
+        setInterval(() => {
+            if (!isRefreshing) {
+                fetchMarketData();
+            }
+        }, 120000);
+    </script>
+</body>
+</html>

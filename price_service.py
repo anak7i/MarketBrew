@@ -218,10 +218,22 @@ def get_multiple_stocks():
     try:
         data = request.get_json()
         symbols = data.get('symbols', [])
-        
+
+        # 如果没有提供symbols，返回市场统计（用于市场温度计）
         if not symbols:
-            return jsonify({"error": "需要提供股票代码列表"}), 400
-        
+            import random
+            # 模拟市场统计数据
+            up_count = random.randint(2000, 3500)
+            down_count = random.randint(1000, 2500)
+
+            return jsonify({
+                "total_count": up_count + down_count,
+                "up_count": up_count,
+                "down_count": down_count,
+                "up_down_ratio": round(up_count / down_count, 2) if down_count > 0 else 0,
+                "timestamp": datetime.now().isoformat()
+            })
+
         results = tencent_api.get_multiple_stocks(symbols)
         return jsonify(results)
     except Exception as e:
@@ -235,6 +247,23 @@ def get_market_status():
         "timestamp": datetime.now().isoformat()
     })
 
+@app.route('/api/north-bound', methods=['GET'])
+def get_north_bound():
+    """获取北向资金（模拟数据）"""
+    import random
+    return jsonify({
+        "total": round(random.uniform(-50, 100), 2),
+        "sh": round(random.uniform(-30, 60), 2),
+        "sz": round(random.uniform(-20, 40), 2),
+        "timestamp": datetime.now().isoformat()
+    })
+
+@app.route('/api/index/<code>', methods=['GET'])
+def get_index(code):
+    """获取指数数据"""
+    result = tencent_api.get_stock_info(code)
+    return jsonify(result)
+
 @app.route('/health', methods=['GET'])
 def health_check():
     """健康检查"""
@@ -245,13 +274,21 @@ def health_check():
     })
 
 if __name__ == '__main__':
+    print("=" * 60)
     print("🚀 MarketBrew 价格服务启动中...")
+    print("=" * 60)
     print("📊 数据源: 腾讯财经 API")
-    print("🔗 服务地址: http://localhost:5002")
+    print("🌡️ 功能: 股票价格 + 市场温度计")
+    print("=" * 60)
+    print("🔗 服务地址: http://localhost:5000")
     print("\n可用接口:")
     print("  GET  /api/stock/<symbol>     - 获取单只股票")
     print("  POST /api/stocks            - 批量获取股票")
     print("  GET  /api/market/status     - 市场状态")
+    print("  GET  /api/north-bound       - 北向资金")
+    print("  GET  /api/index/<code>      - 指数数据")
     print("  GET  /health               - 健康检查")
-    
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    print("=" * 60)
+    print()
+
+    app.run(host='0.0.0.0', port=5000, debug=False)

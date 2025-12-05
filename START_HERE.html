@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketBrew 启动指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .status {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .status-title {
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+            color: #374151;
+        }
+
+        .check {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .steps {
+            margin-bottom: 30px;
+        }
+
+        .step {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .step-content {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-left: 44px;
+        }
+
+        .code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .warning-title {
+            font-weight: bold;
+            color: #92400e;
+            margin-bottom: 5px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background: #f0f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">☕</div>
+            <h1>MarketBrew 启动指南</h1>
+            <p class="subtitle">100% 东方财富API | 真实数据 | 实时更新</p>
+        </div>
+
+        <div class="status">
+            <div class="status-title">✅ 配置状态</div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>akshare 已移除，东方财富API已配置</span>
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>数据服务已创建 (eastmoney_data_service.py)</span>
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                <span>前端页面已就绪 (stock_subscription.html)</span>
+            </div>
+        </div>
+
+        <div class="warning">
+            <div class="warning-title">⚠️ 重要提示</div>
+            需要先启动后端服务才能查看实时数据！
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    打开命令提示符
+                </div>
+                <div class="step-content">
+                    按 <strong>Win + R</strong>，输入 <code style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">cmd</code>，回车
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    进入项目目录
+                </div>
+                <div class="step-content">
+                    <div class="code">cd C:\Users\86158\marketbrew</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    安装依赖（首次运行）
+                </div>
+                <div class="step-content">
+                    <div class="code">pip install flask flask-cors requests pandas numpy</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    启动价格服务
+                </div>
+                <div class="step-content">
+                    <div class="code">python price_service.py</div>
+                    等待看到提示：<strong>Running on http://127.0.0.1:5000</strong>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    打开前端页面
+                </div>
+                <div class="step-content">
+                    保持命令窗口打开，双击下方按钮或手动打开文件：
+                    <div style="margin-top: 10px;">
+                        <code style="background:#f3f4f6;padding:8px 12px;border-radius:4px;display:inline-block;">C:\Users\86158\marketbrew\stock_subscription.html</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">实时股票数据</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-text">北向资金流向</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <div class="feature-text">ETF实时行情</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-text">AI智能分析</div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="stock_subscription.html" class="button">
+                🚀 打开 MarketBrew 主页面
+            </a>
+        </div>
+
+        <div style="text-align:center;margin-top:30px;color:#6b7280;font-size:14px;">
+            <p>📝 详细文档: <strong>README_EASTMONEY_ONLY.md</strong></p>
+            <p>🧪 测试脚本: <strong>python quick_test.py</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // 检查服务是否运行
+        setTimeout(() => {
+            fetch('http://localhost:5000/health')
+                .then(response => {
+                    if (response.ok) {
+                        const warning = document.querySelector('.warning');
+                        warning.style.background = '#d1fae5';
+                        warning.style.borderColor = '#10b981';
+                        warning.innerHTML = `
+                            <div style="font-weight:bold;color:#065f46;margin-bottom:5px;">
+                                ✅ 服务已运行
+                            </div>
+                            后端服务正常运行，可以查看实时数据了！
+                        `;
+                    }
+                })
+                .catch(() => {
+                    console.log('服务未启动，请先运行 price_service.py');
+                });
+        }, 1000);
+    </script>
+</body>
+</html>

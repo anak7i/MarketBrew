@@ -8,6 +8,7 @@ import requests
 import json
 import logging
 import time
+import os
 from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional
 from flask import Flask, jsonify, request
@@ -15,6 +16,7 @@ from flask_cors import CORS
 import sqlite3
 import threading
 from real_market_data_fetcher import RealMarketDataFetcher
+from tushare_pro_service import get_tushare_service
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -26,13 +28,29 @@ DATABASE = 'market_indices.db'
 
 class MarketIndexProvider:
     """市场指数数据提供器"""
-    
-    def __init__(self):
+
+    def __init__(self, use_tushare: bool = True):
         self.price_service_url = "http://localhost:5002"  # 复用价格服务
         self.real_fetcher = RealMarketDataFetcher()  # 真实数据获取器
         self.init_database()
         self.cache = {}
         self.cache_expiry = 300  # 5分钟缓存
+
+        # 初始化Tushare Pro服务（如果启用）
+        self.use_tushare = use_tushare
+        self.tushare_service = None
+        if self.use_tushare:
+            try:
+                tushare_token = os.getenv('TUSHARE_TOKEN')
+                if tushare_token:
+                    self.tushare_service = get_tushare_service(token=tushare_token)
+                    logger.info("✅ 市场概览使用Tushare Pro数据源")
+                else:
+                    logger.warning("⚠️ 未设置TUSHARE_TOKEN环境变量，将使用传统数据源")
+                    self.use_tushare = False
+            except Exception as e:
+                logger.warning(f"⚠️ Tushare Pro初始化失败: {e}，将使用传统数据源")
+                self.use_tushare = False
         
     def init_database(self):
         """初始化指数数据库"""
@@ -189,18 +207,33 @@ class MarketIndexProvider:
         return name_map.get(symbol, f"指数{symbol}")
 
     def _get_market_overview(self) -> Dict[str, Any]:
-        """获取市场概况数据"""
+        """获取市场概况数据
+        优先使用Tushare Pro，失败时回退到real_fetcher
+        """
+        # 优先使用Tushare Pro
+        if self.use_tushare and self.tushare_service:
+            try:
+                logger.info("🔄 使用Tushare Pro获取市场概况...")
+                market_data = self.tushare_service.get_market_overview()
+                if market_data and market_data.get('total_stocks', 0) > 1000:
+                    logger.info(f"✅ Tushare Pro市场概况: {market_data.get('up_stocks', 0)}涨 {market_data.get('down_stocks', 0)}跌")
+                    return market_data
+                else:
+                    logger.warning("⚠️ Tushare Pro返回空数据或数据不完整，尝试使用备用数据源...")
+            except Exception as e:
+                logger.warning(f"⚠️ Tushare Pro获取失败: {e}，回退到备用数据源")
+
+        # 回退到RealMarketDataFetcher
         try:
-            # 优先使用真实市场概况数据
             real_overview = self.real_fetcher.get_real_market_overview()
             if real_overview and real_overview.get('total_stocks', 0) > 1000:
-                logger.info(f"✅ 使用真实市场概况数据: {real_overview['up_stocks']}涨{real_overview['down_stocks']}跌")
+                logger.info(f"✅ 使用备用市场概况数据: {real_overview['up_stocks']}涨{real_overview['down_stocks']}跌")
                 return real_overview
         except Exception as e:
-            logger.warning(f"获取真实市场概况失败: {e}")
-        
-        # 无法获取真实市场概况数据，移除模拟数据
-        logger.info("🚫 移除模拟的市场概况数据")
+            logger.warning(f"获取备用市场概况失败: {e}")
+
+        # 无法获取真实市场概况数据
+        logger.info("🚫 无法获取市场概况数据")
         return {}
 
     def _determine_market_status(self, indices_data: Dict) -> Dict[str, Any]:

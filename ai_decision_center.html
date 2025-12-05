@@ -2652,6 +2652,171 @@
             }
         }
 
+        /* 市场概览面板样式 */
+        .market-overview-section {
+            background: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius-md);
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .stat-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .stat-card.up-card .stat-value {
+            color: #f5576c;
+        }
+
+        .stat-card.down-card .stat-value {
+            color: #00c853;
+        }
+
+        /* 资金流向面板样式 */
+        .capital-flow-section {
+            background: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .flow-content {
+            margin-top: 20px;
+        }
+
+        .today-flow {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--border-radius-md);
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .flow-label {
+            font-size: 1em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .flow-value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .period-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .period-card {
+            background: #f8f9fa;
+            border-radius: var(--border-radius-sm);
+            padding: 20px 15px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .period-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            border-color: #667eea;
+        }
+
+        .period-label {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .period-value {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .period-value.positive {
+            color: #f5576c;
+        }
+
+        .period-value.negative {
+            color: #00c853;
+        }
+
+        .period-sublabel {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .period-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .period-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .period-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -2994,6 +3159,93 @@
                     <button class="consensus-btn" onclick="showConsensusAnalysis()">
                         <i class="fas fa-users"></i> 共识分析
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 市场概览面板 -->
+        <section class="market-overview-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> 市场概览</h2>
+                <button class="refresh-btn" onclick="refreshMarketOverview()">
+                    <i class="fas fa-sync-alt"></i> 刷新
+                </button>
+            </div>
+
+            <div class="stats-grid">
+                <!-- 上涨家数卡片 -->
+                <div class="stat-card up-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-label">上涨家数</div>
+                    <div class="stat-value" id="upCount">--</div>
+                </div>
+
+                <!-- 下跌家数卡片 -->
+                <div class="stat-card down-card">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-label">下跌家数</div>
+                    <div class="stat-value" id="downCount">--</div>
+                </div>
+
+                <!-- 涨跌比卡片 -->
+                <div class="stat-card ratio-card">
+                    <div class="stat-icon">⚖️</div>
+                    <div class="stat-label">涨跌比</div>
+                    <div class="stat-value" id="upDownRatio">--</div>
+                </div>
+
+                <!-- 市场情绪卡片 -->
+                <div class="stat-card sentiment-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-label">市场情绪</div>
+                    <div class="stat-value" id="marketSentiment">--</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资金流向面板 -->
+        <section class="capital-flow-section">
+            <div class="section-header">
+                <h2><i class="fas fa-money-bill-wave"></i> 北向资金流向</h2>
+                <button class="refresh-btn" onclick="refreshCapitalFlow()">
+                    <i class="fas fa-sync-alt"></i> 刷新
+                </button>
+            </div>
+
+            <div class="flow-content">
+                <!-- 今日数据 -->
+                <div class="today-flow">
+                    <div class="flow-label">今日净流入</div>
+                    <div class="flow-value" id="todayFlow">--</div>
+                </div>
+
+                <!-- 多周期统计 -->
+                <div class="period-grid">
+                    <div class="period-card">
+                        <div class="period-label">1日</div>
+                        <div class="period-value" id="flow1d">--</div>
+                        <div class="period-sublabel">日均</div>
+                    </div>
+                    <div class="period-card">
+                        <div class="period-label">3日</div>
+                        <div class="period-value" id="flow3d">--</div>
+                        <div class="period-sublabel">累计</div>
+                    </div>
+                    <div class="period-card">
+                        <div class="period-label">7日</div>
+                        <div class="period-value" id="flow7d">--</div>
+                        <div class="period-sublabel">累计</div>
+                    </div>
+                    <div class="period-card">
+                        <div class="period-label">14日</div>
+                        <div class="period-value" id="flow14d">--</div>
+                        <div class="period-sublabel">累计</div>
+                    </div>
+                    <div class="period-card">
+                        <div class="period-label">28日</div>
+                        <div class="period-value" id="flow28d">--</div>
+                        <div class="period-sublabel">累计</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -3408,19 +3660,27 @@
             setTimeout(() => {
                 showNotification('AI决策中心已就绪');
             }, 1000);
-            
+
             // 加载初始数据
             loadDecisionData();
             loadEntrySignal();
             loadInstitutionalData();
-            
+            loadMarketOverview();
+            loadCapitalFlow();
+
             // 初始化工具提示
             initTooltips();
+
+            // 自动刷新市场数据（5分钟）
+            setInterval(() => {
+                loadMarketOverview();
+                loadCapitalFlow();
+            }, 5 * 60 * 1000);
         });
 
         // Market Mood相关函数
         function loadEntrySignal() {
-            fetch('http://localhost:5010/api/market-mood')
+            fetch('http://localhost:8526/api/market-mood')
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -4566,6 +4826,134 @@
             document.getElementById('modalSubtitle').textContent = '多渠道ETF数据交叉验证';
             document.getElementById('modalBody').innerHTML = modalContent;
             document.getElementById('dimensionDetailModal').style.display = 'flex';
+        }
+
+        // 市场概览相关函数
+        async function loadMarketOverview() {
+            console.log('[市场概览] 开始加载数据...');
+            try {
+                console.log('[市场概览] 发送请求: http://localhost:8526/api/market-stats');
+                const response = await fetch('http://localhost:8526/api/market-stats');
+                console.log('[市场概览] 响应状态:', response.status, response.statusText);
+
+                const result = await response.json();
+                console.log('[市场概览] 响应数据:', result);
+
+                if (result.success) {
+                    const data = result.data;
+                    document.getElementById('upCount').textContent = data.up_count;
+                    document.getElementById('downCount').textContent = data.down_count;
+                    document.getElementById('upDownRatio').textContent = data.up_down_ratio.toFixed(2);
+
+                    // 市场情绪判断
+                    const ratio = data.up_down_ratio;
+                    const sentiment = ratio >= 1.5 ? '强势' :
+                                    ratio >= 1.0 ? '偏强' :
+                                    ratio >= 0.8 ? '中性' : '偏弱';
+                    document.getElementById('marketSentiment').textContent = sentiment;
+                    console.log('[市场概览] ✅ 数据加载成功');
+                } else {
+                    console.error('[市场概览] ❌ API返回失败:', result.error);
+                    throw new Error(result.error || '未知错误');
+                }
+            } catch (error) {
+                console.error('[市场概览] ❌ 加载失败:', error);
+                console.error('[市场概览] 错误详情:', error.message, error.stack);
+                document.getElementById('upCount').textContent = '--';
+                document.getElementById('downCount').textContent = '--';
+                document.getElementById('upDownRatio').textContent = '--';
+                document.getElementById('marketSentiment').textContent = '--';
+            }
+        }
+
+        async function refreshMarketOverview() {
+            showNotification('正在刷新市场概览...');
+            await loadMarketOverview();
+            showNotification('市场概览已更新');
+        }
+
+        // 资金流向相关函数
+        async function loadCapitalFlow() {
+            console.log('[资金流向] 开始加载数据...');
+            try {
+                console.log('[资金流向] 发送请求: http://localhost:8526/api/capital-timing');
+                const response = await fetch('http://localhost:8526/api/capital-timing');
+                console.log('[资金流向] 响应状态:', response.status, response.statusText);
+
+                const result = await response.json();
+                console.log('[资金流向] 响应数据:', result);
+
+                if (result.success) {
+                    const data = result.data;
+                    console.log('[资金流向] 数据详情:', data);
+
+                    // 显示今日流入
+                    const todayFlow = data.latest.total_flow || 0;
+                    document.getElementById('todayFlow').innerHTML =
+                        `<span style="color: ${todayFlow >= 0 ? '#fff' : '#fff'}">
+                            ${todayFlow >= 0 ? '+' : ''}${todayFlow.toFixed(2)}亿
+                        </span>`;
+                    console.log('[资金流向] 今日流入:', todayFlow);
+
+                    // 显示多周期数据
+                    const periods = data.periods;
+                    if (periods['1d']) {
+                        document.getElementById('flow1d').textContent =
+                            formatFlow(periods['1d'].net_flow);
+                        setPeriodColor('flow1d', periods['1d'].net_flow);
+                    }
+                    if (periods['3d']) {
+                        document.getElementById('flow3d').textContent =
+                            formatFlow(periods['3d'].net_flow);
+                        setPeriodColor('flow3d', periods['3d'].net_flow);
+                    }
+                    if (periods['7d']) {
+                        document.getElementById('flow7d').textContent =
+                            formatFlow(periods['7d'].net_flow);
+                        setPeriodColor('flow7d', periods['7d'].net_flow);
+                    }
+                    if (periods['14d']) {
+                        document.getElementById('flow14d').textContent =
+                            formatFlow(periods['14d'].net_flow);
+                        setPeriodColor('flow14d', periods['14d'].net_flow);
+                    }
+                    if (periods['28d']) {
+                        document.getElementById('flow28d').textContent =
+                            formatFlow(periods['28d'].net_flow);
+                        setPeriodColor('flow28d', periods['28d'].net_flow);
+                    }
+                    console.log('[资金流向] ✅ 数据加载成功');
+                } else {
+                    console.error('[资金流向] ❌ API返回失败:', result.error);
+                    throw new Error(result.error || '未知错误');
+                }
+            } catch (error) {
+                console.error('[资金流向] ❌ 加载失败:', error);
+                console.error('[资金流向] 错误详情:', error.message, error.stack);
+                document.getElementById('todayFlow').textContent = '--';
+                ['flow1d', 'flow3d', 'flow7d', 'flow14d', 'flow28d'].forEach(id => {
+                    document.getElementById(id).textContent = '--';
+                });
+            }
+        }
+
+        async function refreshCapitalFlow() {
+            showNotification('正在刷新资金流向...');
+            await loadCapitalFlow();
+            showNotification('资金流向已更新');
+        }
+
+        // 辅助函数
+        function formatFlow(value) {
+            return `${value >= 0 ? '+' : ''}${value.toFixed(1)}亿`;
+        }
+
+        function setPeriodColor(elementId, value) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.classList.remove('positive', 'negative');
+                element.classList.add(value >= 0 ? 'positive' : 'negative');
+            }
         }
     </script>
 
